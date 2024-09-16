@@ -249,17 +249,18 @@ header ul.nav li ul li a {
 .service-v1 img:hover{
 	transform: scale(1.1);
 }
-/* Estilo geral para a tabela */
+/* Estilos gerais da tabela */
 table {
     width: 100%;
     border-collapse: separate; /* Necessário para bordas arredondadas */
     border-spacing: 0; /* Remove o espaçamento entre as células */
+    table-layout: auto; /* Permite ajuste da tabela em diferentes tamanhos de tela */
 }
 
 /* Estilo para a borda da tabela */
 table, th, td {
     border: 2px solid #AEAEAE; /* Cor da borda da tabela */
-    border-radius: 3px;/* Bordas arredondadas */
+    border-radius: 3px; /* Bordas arredondadas */
 }
 
 /* Estilo para a borda das células da tabela */
@@ -267,14 +268,49 @@ th, td {
     padding: 10px; /* Espaçamento interno das células */
     text-align: left; /* Alinhamento do texto */
     background-color: #f9f9f9; /* Cor de fundo das células */
+    word-wrap: break-word; /* Quebra palavras muito longas em linhas menores */
 }
 
 /* Estilo para o cabeçalho da tabela */
-th { /* Cor de fundo do cabeçalho */
+th {
     color: #646464; /* Cor do texto do cabeçalho */
+    background-color: #f1f1f1; /* Cor de fundo do cabeçalho */
     border-radius: 3px 3px 0 0; /* Bordas arredondadas no topo */
 }
 
+/* Tornar a tabela responsiva com rolagem horizontal */
+table {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch; /* Suporte para rolagem suave no iOS */
+}
+
+@media screen and (max-width: 768px) {
+    th, td {
+        font-size: 14px; /* Diminui o tamanho da fonte para telas menores */
+        padding: 8px; /* Ajusta o espaçamento das células */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    th, td {
+        font-size: 12px; /* Diminui ainda mais o tamanho da fonte para telas muito pequenas */
+        padding: 6px; /* Ajusta o espaçamento das células */
+    }
+
+    table, th, td {
+        display: block; /* Faz com que cada célula ocupe toda a largura em telas pequenas */
+        width: 100%; /* Ajusta a largura para ocupar a tela */
+    }
+
+    th {
+        text-align: left;
+    }
+}
+
+.back{
+	font-size: 50px;
+	color: #F7566B;
+}
 .navbar .nav > li > a {
   color: #646464;
   text-shadow: none;
@@ -351,13 +387,6 @@ display: inline-block;
 /*  Sliders
 ==================================== */
 /* --- flexslider --- */
-#main-slider:before {
-content: '';
-width: 100%;
-height: 100%;
-z-index: 1;
-position: absolute;
-}
 #main-slider {
     width: 100%; /* Garante que o slider ocupe toda a largura do contêiner */
     height: auto; /* Ajusta a altura automaticamente */
@@ -379,7 +408,7 @@ position: absolute;
 #main-slider .slides img {
     max-width:100%; /* Garante que a imagem não ultrapasse a largura do contêiner */
     height: auto;
-	
+	object-fit: cover; 	
 }
 .flex-direction-nav a{
 display:none;
@@ -430,9 +459,9 @@ text-align: center;
 -ms-border-radius: 50%;
 -moz-border-radius: 50%;
 -webkit-border-radius: 50%;
-border-radius: 0;
+border-radius: 10px;
 display: inline-table;
-border: 1px solid #C8C8C8;
+border: 1px solid #f96d6d;
 background: transparent;
 color: #F63D3D;
 }
@@ -1412,7 +1441,7 @@ ul.social-network li {
 	padding:0;
 	padding-top:30px;
 	margin:20px 0 0 0;
-	background: #5C68FF;
+	background: #FF896E;
 }
 
 #sub-footer p{
@@ -1574,7 +1603,6 @@ article img.pull-right, article .align-right{
 	}
 
 
-	
 	footer .widget form  input#appendedInputButton {
 		  display: block;
 		  width: 91%;
@@ -1750,7 +1778,11 @@ padding-top: 3px;
 		float:left;
 		margin-top:20px;
 	}
-
+	#main-slider .slides img {
+		max-width:500px; 
+		height: auto;
+		
+	}
 
 	.search{
 		float:left;
@@ -1775,4 +1807,34 @@ padding-top: 3px;
 
 }
 
- 
+ /* Responsividade */
+@media screen and (max-width: 768px) {
+    #main-slider {
+        height: auto;
+		margin-top: 30px; /* Ajusta a altura automaticamente para telas menores */
+    }
+
+    #main-slider .slides img {
+        max-width: 100%;
+        height: auto; /* Garante que a imagem se ajuste corretamente */
+    }
+}
+
+@media screen and (max-width: 480px) {
+    #main-slider {
+        height: auto;
+		 /* Ajusta a altura automaticamente em telas pequenas */
+    }
+	.navbar-brand img{
+		max-height: 70px;
+		margin-top: -20px;
+	}
+    #main-slider .slides img {
+        max-width: 100%;
+        height: auto; 
+		margin-top: 70px;/* Mantém o aspecto da imagem em dispositivos móveis */
+    }
+	.callaction{
+		margin-top: 60px;
+	}
+}
