@@ -1,0 +1,566 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Deu Pet - Especificação de Caso de Uso</title>
+</head>
+<body>
+    <header>
+        <h1>Deu Pet</h1>
+        <h2>Especificação de Caso de Uso</h2>
+    </header>
+
+    <section>
+        <h3>Histórico de Revisões</h3>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Versão</th>
+                    <th>Data</th>
+                    <th>Descrição</th>
+                    <th>Autor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>01</td>
+                    <td>09/09/2024</td>
+                    <td>Elaboração do documento de especificação de casos de uso.</td>
+                    <td>Ana Julia Alves, Letícia Caixeta, Manuela Oliveira, Paula Nascimento, Vitória Cristina</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <nav>
+        <h3>Sumário</h3>
+        <ul>
+            <li><a href="#casos-de-uso">1. Casos de Uso</a></li>
+            <li><a href="#cadastrar-pets">1.1 Cadastrar pets</a></li>
+            <li><a href="#cadastrar-ong-protetor">1.2 Cadastrar ONG e/ou Protetor</a></li>
+            <li><a href="#cadastrar-adotante">1.3 Cadastrar Adotante</a></li>
+            <li><a href="#buscar-animais">1.4 Buscar Animais Disponíveis</a></li>
+            <li><a href="#chat-mensagens">1.5 Chat para troca de mensagens</a></li>
+            <li><a href="#login-sistema">1.6 Login no Sistema</a></li>
+            <li><a href="#logout-sistema">1.7 Logout no Sistema</a></li>
+            <li><a href="#alteracao-dados-pets">1.8 Alteração das Informações dos Animais</a></li>
+            <li><a href="#consulta-ong-protetor">1.9 Consulta de ONG e/ou Protetor</a></li>
+            <li><a href="#lista-favoritos">1.10 Lista de Favoritos</a></li>
+            <li><a href="#referencias">2. Referências</a></li>
+            <li><a href="#aprovacoes">3. Aprovações</a></li>
+        </ul>
+    </nav>
+
+    <h2 id="casos-de-uso">1. CASOS DE USO</h2>
+
+    <section id="cadastrar-pets">
+        <h2>1.1 Cadastrar pets</h2>
+        <img src="images/cadastrar-pet.png" alt="Diagrama de Caso de Uso - Cadastrar Pet" width="446" height="281">
+
+        <h3>1.1.1 Descrição do Caso de Uso</h3>
+        <p>Permite o cadastro de novos animais na plataforma, fornecendo detalhes como nome, idade, raça, porte, condições de saúde e fotos.</p>
+
+        <h3>1.1.2 Atores</h3>
+        <p>ONG e Protetor Autônomo</p>
+
+        <h3>1.1.3 Pré-Condições</h3>
+        <ul>
+            <li>O usuário (administrador ou pessoa com permissão) deve estar autenticado no sistema.</li>
+        </ul>
+
+        <h3>1.1.4 Pós-Condições</h3>
+
+        <ul>
+            <li>O animal deve estar registrado na plataforma com todos os detalhes fornecidos (nome, idade, raça, porte, condições de saúde, fotos).</li>
+            <li>O sistema deve exibir uma mensagem de sucesso confirmando o cadastro.</li>
+        </ul>
+
+        <h3>1.1.5 Fluxo de Eventos</h3>
+        <h4>1.1.5.1 Fluxo Básico (Principal)</h4>
+        <h5>FB. Cadastrar pets</h5>
+        <p>PASSOS:</p>
+        <ol>
+            <li>Usuário faz o login no sistema</li>
+            <li>Acessar aba de cadastro exibida pelo sistema</li>
+            <li>Preencher as informações e fotos do pet (nome, idade, descrição) solicitadas pela tela de cadastro exibida pelo sistema</li>
+            <li>Finalizar o cadastro clicando no botão de finalizar cadastro</li>
+            <li>Exibir confirmação de cadastro</li>
+        </ol>
+
+        <h4>1.1.5.2 Fluxos Alternativos</h4>
+        <h5>FA1. Cadastrar pets - usuário não cadastrado</h5>
+        <p>No passo 1, quando o ator quiser fazer login sem possuir um cadastro, o sistema deve realizar os seguintes passos: </p>
+        <ul style="list-style-type: none; padding-left: 20px;">
+            <li>1.1 Exibir mensagem que o usuário (ONG ou Protetor Autônomo) não está cadastrado no sistema.</li>
+            <li>1.2 Realizar o cadastro do usuário no sistema.</li>
+            <li>1.3 O Sistema retorna para o passo 2.</li>
+        </ul>
+
+        <h5>FA2. Cadastrar pets – credenciais incorretas</h5>
+        <p>No passo 1, quando o ator solicitar login no sistema e não conseguir logar por erro de credenciais, o sistema deve:  </p>
+        <ul style="list-style-type: none; padding-left: 20px;">
+            <li>1.1 Informar que usuário ou senha estão incorretos</li>
+            <li>1.2 Caso o usuário não consiga inserir as credenciais corretas, cadastrar nova senha.</li>
+        </ul>
+    </section>
+
+    <section id="cadastrar-ong-protetor">
+        <h2>1.2 Cadastrar ONG e/ou Protetor</h2>
+        <img src="images/cadastrar-voluntario.png" alt="Diagrama de Caso de Uso - Cadastrar Voluntário" width="446" height="231">
+
+        <h3>1.2.1 Descrição do Caso de Uso</h3>
+        <p>Tem como objetivo permitir que ONGs e/ou protetores independentes se cadastrem na plataforma, fornecendo informações como nome, endereço, detalhes de contato e informações sobre os animais disponíveis para adoção.</p>
+
+        <h3>1.2.2 Atores</h3>
+        <p>ONG e Protetor Autônomo</p>
+
+        <h3>1.2.3 Pré-Condições</h3>
+        <ul>
+            <li>O usuário (administrador ou pessoa com permissão) deve estar autenticado no sistema.</li>
+        </ul>
+
+        <h3>1.2.4 Pós-Condições</h3>
+        <ul>
+            <li>A ONG ou o protetor deve estar registrado na plataforma com todos os detalhes fornecidos.</li>
+            <li>O sistema deve exibir uma mensagem de sucesso confirmando o cadastro.</li>
+        </ul>
+
+        <h3>1.2.5 Fluxo de Eventos</h3>
+        <h4>1.2.5.1 Fluxo Básico (Principal)</h4>
+        <h5>FB. Cadastrar ONG e/ou Protetor</h5>
+        <p>PASSOS:</p>
+        <ol>
+            <li>O usuário acessa a plataforma e clica em "Criar Conta"</li>
+            <li>O sistema exibe a aba de cadastro de ONG e/ou Protetor</li>
+            <li>Acessar a aba de cadastro de ONGs e protetores</li>
+            <li>Preencher as informações a ONG e/ou protetor</li>
+            <li>Finalizar o cadastro clicando no botão de finalizar cadastro</li>
+            <li>Sistema exibe uma mensagem confirmando o cadastro com sucesso.</li>
+        </ol>
+
+        <h4>1.2.5.2 Fluxos Alternativos</h4>
+        <h5>FA1. Cadastrar ONG e/ou Protetor – Cadastro de ONG e/ou Protetor já existente</h5>
+        <p>No passo 2, quando o usuário tentar cadastrar uma ONG ou Protetor que já está registrado no sistema, o sistema deve realizar os seguintes passos:</p>
+        <ul style="list-style-type: none; padding-left: 20px;">
+            <li>2.1 O sistema exibe uma mensagem informando que o nome ou o CNPJ (no caso de ONGs) já está registrado.</li>
+            <li>2.2 O sistema oferece a opção de recuperar ou atualizar os dados da ONG/Protetor existente.</li>
+            <li>2.3 Caso o usuário escolha atualizar os dados, o sistema direciona para a tela de edição das informações cadastradas.</li>
+            <li>2.4 O sistema retorna ao passo 5 do fluxo principal.</li>
+        </ul>
+
+        <h5>FA2. Cadastrar ONG e/ou Protetor - Informações incompletas</h5>
+        <p>No passo 2, se o usuário tentar finalizar o cadastro sem preencher todos os campos obrigatórios:</p>
+        <ul style="list-style-type: none; padding-left: 20px;">
+            <li>2.1 O sistema valida os dados e identifica campos obrigatórios não preenchidos.</li>
+            <li>2.2 O sistema exibe uma mensagem de erro informando que informações essenciais estão faltando.</li>
+            <li>2.3 O sistema destaca os campos que precisam ser preenchidos, permitindo ao usuário completar o cadastro.</li>
+            <li>2.4 O sistema retorna ao passo 4 do fluxo principal.</li>
+        </ul>
+    </section>
+
+    <section id="cadastrar-adotante">
+        <h2>1.3 Cadastrar Adotante</h2>
+        <img src="images/cadastrar-adotante.png" alt="Diagrama de Caso de Uso - Cadastrar Adotante" width="414" height="221">
+
+        <h3>1.3.1 Descrição do Caso de Uso</h3>
+        <p>Tem como objetivo permitir que o adotante crie uma conta na plataforma, fornecendo suas informações pessoais e de contato.</p>
+
+        <h3>1.3.2 Atores</h3>
+        <p>Adotante</p>
+
+        <h3>1.3.3 Pré-Condições</h3>
+        <ul>
+            <li>O usuário (administrador ou pessoa com permissão) deve estar autenticado no sistema.</li>
+        </ul>
+
+        <h3>1.3.4 Pós-Condições</h3>
+        <ul>
+            <li>O adotante deve estar registrado na plataforma com todos os detalhes fornecidos.</li>
+            <li>O sistema deve exibir uma mensagem de sucesso confirmando o cadastro.</li>
+        </ul>
+
+        <h3>1.3.5 Fluxo de Eventos</h3>
+        <h4>1.3.5.1 Fluxo Básico (Principal)</h4>
+        <h5>FB. Cadastrar adotante</h5>
+        <p>PASSOS:</p>
+        <ol>
+            <li>O usuário acessa a plataforma e clica em "Criar Conta".</li>
+            <li>O sistema exibe a aba de cadastro de adotantes.</li>
+            <li>O usuário preenche as informações pessoais, como nome completo, e-mail, telefone, endereço e CPF.</li>
+            <li>O usuário cria uma senha para o acesso e clica no botão de finalizar cadastro.</li>
+            <li>O sistema exibe uma mensagem confirmando o cadastro com sucesso.</li>
+        </ol>
+
+        <h4>1.3.5.2 Fluxos Alternativos</h4>
+        <h5>FA1. Cadastrar adotante – Adotante já cadastrado</h5>
+        <p>No passo 3, se o adotante tentar se cadastrar com um e-mail ou CPF já existente no sistema, o sistema deve:</p>
+        <ul style="list-style-type: none; padding-left: 20px;">
+            <li>3.1 O sistema exibe uma mensagem informando que o e-mail ou CPF já está registrado.</li>
+            <li>3.2 O sistema oferece a opção de realizar o login ou recuperar a senha.</li>
+            <li>3.3 Se o adotante escolher recuperar a senha, o sistema envia um e-mail para redefinição.</li>
+            <li>3.4 O sistema retorna ao passo 2 do fluxo principal, se o adotante optar por tentar novamente.</li>
+        </ul>
+
+        <h5>FA2. Cadastrar adotante - Informações incompletas ou inválidas</h5>
+        <p>No passo 4, se o adotante tentar finalizar o cadastro com informações incompletas ou inválidas, o sistema deve:</p>
+        <ul style="list-style-type: none; padding-left: 20px;">
+            <li>4.1 O sistema valida os campos e identifica informações obrigatórias que estão ausentes ou inválidas (ex: CPF incorreto ou e-mail em formato inválido).</li>
+            <li>4.2 O sistema exibe uma mensagem de erro destacando os campos que precisam ser corrigidos.</li>
+            <li>4.3 O adotante corrige as informações e tenta finalizar o cadastro novamente.</li>
+            <li>4.4 O sistema retorna ao passo 5 do fluxo principal, após a correção.</li>
+        </ul>
+    </section>
+
+    <section id="buscar-animais">
+        <h2>1.4 Buscar Animais Disponíveis</h2>
+        <img src="images/buscar-animal.png" alt="Diagrama de Caso de Uso - Buscar Animais Disponíveis" width="661" height="378">
+
+        <h3>1.4.1 Descrição do Caso de Uso</h3>
+        <p>Permite a busca de animais disponíveis para adoção na plataforma.</p>
+
+        <h3>1.4.2 Atores</h3>
+        <p>Adotante</p>
+
+        <h3>1.4.3 Pré-Condições</h3>
+        <ul>
+            <li>O sistema deve conter animais cadastrados como disponíveis para adoção.</li>
+        </ul>
+
+        <h3>1.4.4 Pós-Condições</h3>
+        <ul>
+            <li>O sistema deve exibir uma lista de animais que correspondem aos critérios de busca fornecidos pelo usuário.</li>
+        </ul>
+
+        <h3>1.4.5 Fluxo de Eventos</h3>
+        <h4>1.4.5.1 Fluxo Básico (Principal)</h4>
+        <h5>FB. Buscar Animais Disponíveis</h5>
+        <p>PASSOS:</p>
+        <ol>
+            <li>Usuário faz o login no sistema.</li>
+            <li>Escolher a funcionalidade de busca de animais para adoção.</li>
+            <li>O sistema exibe um campo de pesquisa e filtros opcionais.</li>
+            <li>O usuário insere os critérios de busca ou utiliza os filtros disponíveis.</li>
+            <li>O usuário confirma a busca clicando no botão de pesquisa.</li>
+            <li>O sistema exibe uma lista de animais que atendem aos critérios de busca.</li>
+            <li>O usuário visualiza os detalhes dos animais listados (nome, idade, raça, fotos, etc.) e pode selecionar um para obter mais informações ou iniciar o processo de adoção.</li>
+        </ol>
+
+        <h4>1.4.5.2 Fluxos Alternativos</h4>
+        <h5>FA1. Buscar Animais Disponíveis - Nenhum animal encontrado</h5>
+        <p>No passo 4, quando o ator definir critérios de busca muito específicos ou incompatíveis, o sistema deve realizar os seguintes passos:</p>
+        <ul style="list-style-type: none; padding-left: 20px;">
+            <li>4.1 O sistema exibe uma mensagem informando que nenhum animal foi encontrado.</li>
+            <li>4.2 O sistema sugere a remoção de filtros ou ajustes nos critérios de pesquisa.</li>
+            <li>4.3 Usuário volta para o passo 3 com outros filtros.</li>
+        </ul>
+    </section>
+
+    <section id="chat-mensagens">
+        <h2>1.5 Chat para troca de mensagens</h2>
+        <img src="images/chat.png" alt="Diagrama de Caso de Uso - Chat para troca de mensagens" width="710" height="386">
+
+        <h3>1.5.1 Descrição do Caso de Uso</h3>
+        <p>Tem como objetivo permitir a troca de mensagens entre adotantes, ONG e protetores, a fim de facilitar a comunicação.</p>
+
+        <h3>1.5.2 Atores</h3>
+        <p>Adotante, ONG e Protetor Autônomo</p>
+
+        <h3>1.5.3 Pré-Condições</h3>
+        <ul>
+            <li>Os usuários (adotantes, ONGs e protetores) devem estar autenticados na plataforma.</li>
+        </ul>
+
+        <h3>1.5.4 Pós-Condições</h3>
+        <ul>
+            <li>A mensagem deve ser enviada e recebida com sucesso entre as partes envolvidas.</li>
+        </ul>
+
+        <h3>1.5.5 Fluxo de Eventos</h3>
+        <h4>1.5.5.1 Fluxo Básico (Principal)</h4>
+        <h5>FB. Chat para troca de mensagens</h5>
+        <p>PASSOS:</p>
+        <ol>
+            <li>Usuário faz o login no sistema.</li>
+            <li>O usuário navega até a funcionalidade de mensagens.</li>
+            <li>O usuário seleciona o contato com quem deseja trocar mensagens (adotante, ONG ou protetor).</li>
+            <li>O sistema exibe a lista de conversas existentes ou a opção de iniciar uma nova conversa.</li>
+            <li>O usuário inicia uma nova conversa ou seleciona uma conversa existente.</li>
+            <li>O usuário digita a mensagem e a envia.</li>
+            <li>A mensagem é entregue ao destinatário e exibida na janela de chat do destinatário. </li>
+            <li>O destinatário pode responder à mensagem, e o processo continua conforme o fluxo de troca de mensagens. </li>
+        </ol>
+
+        <h4>1.5.5.2 Fluxos Alternativos</h4>
+        <h5>FA1. Chat para troca de mensagens - Mensagem Não Enviada</h5>
+        <p>No passo 6 o usuário tenta enviar uma mensagem, mas ocorre um erro (por exemplo, problemas de conexão ou erro no sistema). o sistema deve realizar os seguintes passos: </p>
+        <ul style="list-style-type: none; padding-left: 20px;">
+            <li>6.1 Exibir uma mensagem de erro indicando que a mensagem não foi enviada.</li>
+            <li>6.2 Oferecer ao usuário a opção de tentar enviar a mensagem novamente.</li>
+        </ul>
+    </section>
+
+    <section id="login-sistema">
+        <h2>1.6 Login no Sistema</h2>
+        <img src="images/login.png" alt="Diagrama de Caso de Uso - Login no Sistema" width="464" height="361">
+
+        <h3>1.6.1 Descrição do Caso de Uso</h3>
+        <p>Este caso de uso permite que adotantes, ONGs e protetores façam login na plataforma, fornecendo suas credenciais de acesso (e-mail e senha). </p>
+
+        <h3>1.6.2 Atores</h3>
+        <p>Adotante, ONG e/ou Protetor Autônomo </p>
+
+        <h3>1.6.3 Pré-Condições</h3>
+        <ul>
+            <li>O usuário (adotante, ONG ou protetor) deve já estar registrado na plataforma. </li>
+            <li>O usuário deve fornecer credenciais válidas (e-mail e senha). </li>
+        </ul>
+
+        <h3>1.6.4 Pós-Condições</h3>
+        <ul>
+            <li>O usuário será autenticado com sucesso e terá acesso ao seu perfil e funcionalidades disponíveis na plataforma. </li>
+        </ul>
+
+        <h3>1.6.5 Fluxo de Eventos</h3>
+        <h4>1.6.5.1 Fluxo Básico (Principal)</h4>
+        <h5>FB. Login no Sistema</h5>
+        <p>PASSOS:</p>
+        <ol>
+            <li>Usuário acessa a página de login e insere suas credenciais (e-mail e senha) </li>
+            <li>Usuário clica no botão de login </li>
+            <li>Sistema valida as credenciais fornecidas </li>
+            <li>Sistema redireciona o usuário para a home do aplicativo </li>
+        </ol>
+
+        <h4>1.6.5.2 Fluxos Alternativos</h4>
+        <h5>FA1. Login – Credenciais Inválidas </h5>
+        <p>No passo 3, quando o ator inserir credenciais incorretas e clicar no botão de login, o sistema deve realizar os seguintes passos: </p>
+        <ol>
+            <li>Exibir uma mensagem de erro indicando que o e-mail ou a senha estão incorretos.</li>
+            <li>Permitir que o usuário tente inserir as credenciais novamente.</li>
+        </ol>
+        <ul style="list-style-type: none; padding-left: 20px;">
+            <li>3.1 Sistema exibe uma mensagem informando que as credenciais estão incorretas </li>
+            <li>3.2 Usuário clica no botão “esqueci minha senha”</li>
+            <li>3.3 Sistema redireciona o usuário para a tela de recuperação </li>
+            <li>3.4 Usuário insere o endereço de e-mail cadastrado no aplicativo </li>
+            <li>3.5 Sistema envia um e-mail para o endereço informado com as instruções de redefinição de senha </li>
+            <li>3.6 Usuário cadastra uma nova senha</li>
+            <li>3.7 Sistema volta para o passo 1 </li>
+        </ul>
+
+        <h5>FA2. Login - Usuário não cadastrado</h5>
+        <p>No passo 3, quando o ator inserir um e-mail não cadastrado e clicar no botão de login, o sistema deve realizar os seguintes passos: </p>
+
+        <ul style="list-style-type: none; padding-left: 20px;">
+            <li>3.1 Sistema exibe uma mensagem informando que o usuário não possui uma conta </li>
+            <li>3.2 Usuário clica no botão de registro e efetua o cadastro </li>
+            <li>3.3 Sistema volta para o passo 1 </li>
+        </ul>
+    </section>
+
+    <section id="logout-sistema">
+        <h2>1.7 Logout no Sistema</h2>
+        <img src="images/logout.png" alt="Diagrama de Caso de Uso - Logout no Sistema" width="485" height="212">
+
+        <h3>1.7.1 Descrição do Caso de Uso</h3>
+        <p>Este caso de uso permite que adotantes, ONGs e protetores façam logout da plataforma, encerrando sua sessão ativa no sistema.</p>
+
+        <h3>1.7.2 Atores</h3>
+        <p>Adotante, ONG e/ou Protetor Autônomo </p>
+
+        <h3>1.7.3 Pré-Condições</h3>
+        <ul>
+            <li>O usuário (adotante, ONG ou protetor) deve estar autenticado na plataforma com uma sessão ativa.</li>
+        </ul>
+
+        <h3>1.7.4 Pós-Condições</h3>
+        <ul>
+            <li>A sessão ativa do usuário é encerrada, e ele é desconectado do sistema.</li>
+            <li>O sistema deve redirecionar o usuário para a página inicial ou tela de login.</li>
+        </ul>
+
+        <h3>1.7.5 Fluxo de Eventos</h3>
+        <h4>1.7.5.1 Fluxo Básico (Principal)</h4>
+        <h5>FB. Logout no Sistema</h5>
+        <p>PASSOS:</p>
+        <ol>
+            <li>Usuário clica no ícone que mostra as opções.</li>
+            <li>Usuário clica no botão de logout.</li>
+            <li>Sistema desconecta o usuário da plataforma.</li>
+            <li>Sistema redireciona o usuário para a página de login.</li>
+        </ol>
+    </section>
+
+    <section id="alteracao-dados-pets">
+        <h2>1.8 Alteração das Informações dos Animais</h2>
+        <img src="images/alterar-dados.png" alt="Diagrama de Caso de Uso - Alteração das Informações dos Animais" width="446" height="281">
+
+        <h3>1.8.1 Descrição do Caso de Uso</h3>
+        <p>Este caso de uso permite que ONGs e/ou protetores alterem as informações dos animais cadastrados. A atualização dos dados é importante para manter as informações corretas e facilitar o processo de adoção. </p>
+
+        <h3>1.8.2 Atores</h3>
+        <p>ONG e Protetor Autônomo</p>
+
+        <h3>1.8.3 Pré-Condições</h3>
+        <ul>
+            <li>A ONG ou protetor deve estar autenticado na plataforma. </li>
+        </ul>
+
+        <h3>1.8.4 Pós-Condições</h3>
+        <ul>
+            <li>As informações do animal são atualizadas com sucesso no sistema, refletindo as alterações feitas.</li>
+            <li>O sistema deve exibir uma confirmação da atualização bem-sucedida. </li>
+        </ul>
+
+        <h3>1.8.5 Fluxo de Eventos</h3>
+        <h4>1.8.5.1 Fluxo Básico (Principal)</h4>
+        <h5>FB. Alterar dados pet </h5>
+        <p>PASSOS:</p>
+        <ol>
+            <li>Usuário faz login no sistema.</li>
+            <li>Usuário acessa a página do pet em específico que ele deseja fazer alterações.</li>
+            <li>Seleciona o ícone para editar os dados.</li>
+            <li>Preenche corretamente as informações que deseja alterar.</li>
+            <li>Finaliza as alterações clicando no botão de salvar.</li>
+            <li>Exibir tela de confirmação da atualização dos dados.</li>
+        </ol>
+
+        <h4>1.8.5.2 Fluxos Alternativos</h4>
+        <h5>FA1. Alterações pets – pet não cadastrado</h5>
+        <p>No passo 2, quando o ator quiser editar dados de um pet e perceber que ele ainda não foi cadastrado, o sistema deve realizar os 	seguintes passos: </p>
+        <ul style="list-style-type: none; padding-left: 20px;">
+            <li>2.1 Exibir mensagem que o pet não está cadastrado no sistema. </li>
+            <li>2.2 Realizar o cadastro do pet no sistema.</li>
+            <li>2.3 O Sistema retorna para o passo 2.</li>
+        </ul>
+
+        <h5>FA2. Alterações pets – credenciais incorretas</h5>
+        <p>No passo 1, quando o ator solicitar login no sistema e não conseguir logar por erro de credenciais, o sistema deve: </p>
+        <ul style="list-style-type: none; padding-left: 20px;">
+            <li>1.1 Informar que usuário ou senha estão incorretos. </li>
+            <li>1.2 Caso o usuário não consiga inserir as credenciais corretas, cadastrar nova senha.</li>
+        </ul>
+    </section>
+
+    <section id="consulta-ong-protetor">
+        <h2>1.9 Consulta de ONG e/ou Protetor</h2>
+        <img src="images/buscar-voluntario.png" alt="Diagrama de Caso de Uso - Consulta de ONG e/ou Protetor" width="400" height="224">
+
+        <h3>1.9.1 Descrição do Caso de Uso</h3>
+        <p>Este caso de uso permite que o adotante consulte as ONGs e protetores cadastrados na plataforma, obtendo informações como localização e tipos de animais disponíveis.</p>
+
+        <h3>1.9.2 Atores</h3>
+        <p>Adotante</p>
+
+        <h3>1.9.3 Pré-Condições</h3>
+        <ul>
+            <li>O adotante deve estar autenticado na plataforma.</li>
+            <li>O sistema deve conter ONGs e protetores previamente cadastrados e com dados disponíveis para consulta.</li>
+        </ul>
+
+        <h3>1.9.4 Pós-Condições</h3>
+        <ul>
+            <li>O sistema deve exibir os detalhes relevantes para o adotante, como nome da ONG/protetor, endereço, contato e informações sobre os animais.</li>
+        </ul>
+
+        <h3>1.9.5 Fluxo de Eventos</h3>
+        <h4>1.9.5.1 Fluxo Básico (Principal)</h4>
+        <h5>FB. Consulta de ONG e/ou Protetor</h5>
+        <p>PASSOS:</p>
+        <ol>
+            <li>Usuário clica no filtro de busca.</li>
+            <li>O sistema exibe opções de filtros.</li>
+            <li>Usuário seleciona filtragem por ONGs/protetores.</li>
+            <li>Usuário digita o nome que deseja pesquisar. </li>
+            <li>O sistema lista quais as ONGs e/ou protetores identificados a partir da busca realizada.</li>
+            <li>O usuário seleciona a opção que deseja saber mais.</li>
+            <li>O sistema apresenta página com especificações da ONG e/ou protetor selecionado pelo usuário.</li>
+        </ol>
+
+        <h4>1.9.5.2 Fluxos Alternativos</h4>
+        <h5>FA1. Consulta de ONG e/ou Protetor - resultado não encontrado</h5>
+        <p>No passo 4 quando o ator realizar a busca de ONG/protetor, porém existir nenhum resultado relacionado à busca, o sistema deve realizar os seguintes passos: </p>
+        <ul style="list-style-type: none; padding-left: 20px;">
+            <li>4.1 O sistema não exibe nenhum resultado.</li>
+            <li>4.2 O usuário realizar uma nova busca.</li>
+            <li>4.3 Retorna para o passo 5.</li>
+        </ul>
+    </section>
+
+    <section id="lista-favoritos">
+        <h2>1.10 Lista de Favoritos </h2>
+        <img src="images/favoritos.png" alt="Diagrama de Caso de Uso - Lista de Favoritos" width="270" height="224">
+
+        <h3>1.10.1 Descrição do Caso de Uso</h3>
+        <p>Este caso de uso permite que o adotante crie uma lista de favoritos, onde pode salvar animais que tenham despertado seu interesse para uma possível adoção futura. </p>
+
+        <h3>1.10.2 Atores</h3>
+        <p>Adotante </p>
+
+        <h3>1.10.3 Pré-Condições</h3>
+        <ul>
+            <li>O adotante deve estar autenticado na plataforma. </li>
+            <li>O sistema deve conter animais cadastrados.</li>
+        </ul>
+
+        <h3>1.10.4 Pós-Condições</h3>
+        <ul>
+            <li>O usuário recebe uma confirmação de que o item foi adicionado à lista de favoritos. </li>
+            <li>A lista de favoritos do usuário é atualizada, refletindo as mudanças. </li>
+        </ul>
+
+        <h3>1.10.5 Fluxo de Eventos</h3>
+        <h4>1.10.5.1 Fluxo Básico (Principal)</h4>
+        <h5>FB. Favoritar um pet </h5>
+        <p>PASSOS:</p>
+        <ol>
+            <li>Usuário realiza a busca de algum pet de acordo com especificação desejada ou apenas encontra algum no feed inicial. </li>
+            <li>Sistema retorna a listagem de animais.</li>
+            <li>O usuário clica na opção de "favoritar" o pet. </li>
+            <li>O pet selecionado é incluído na listagem de favoritos do usuário padrão.</li>
+        </ol>
+
+        <h4>1.10.5.2 Fluxos Alternativos</h4>
+        <h5>FA1. Favoritar pet em lista personalizada</h5>
+        <p>Quando o ator quiser adicionar o pet em uma lista personalizada, o sistema deve realizar os seguintes passos: </p>
+        <ul style="list-style-type: none; padding-left: 20px;">
+            <li>3.1 O usuário clica em "favoritar" o pet. </li>
+            <li>3.2 Sistema apresenta pop-up com opção de criar uma lista de favoritos personalizada. </li>
+            <li>3.3 Usuário seleciona a opção de criar a lista personalizada nos favoritos para incluir o pet selecionado. </li>
+            <li>3.4 O pet selecionado é incluído na listagem de favoritos do usuário.</li>
+        </ul>
+    </section>
+
+    <h2 id="referencias">2. REFERÊNCIAS</h2>
+    <p>
+        LIMA, Joice. Especificação Caso de Uso. YouTube, 20 maio 2020. Disponível em: 
+        <a href="https://www.youtube.com/watch?v=b7HV3lJLysI" target="_blank">https://www.youtube.com/watch?v=b7HV3lJLysI</a>. 
+        Acesso em: 09 set. 2024.
+    </p>
+    
+    <h2 id="aprovacoes">3. APROVAÇÕES</h2>
+    <table border="1" cellpadding="5">
+        <thead>
+            <tr>
+                <th>Participante</th>
+                <th>Assinatura</th>
+                <th>Data</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Gerente do Projeto</td>
+                <td style="color: blue; font-style: italic;">Daniela Justiniano de Sousa Pereira</td>
+                <td>09/09/2024</td>
+            </tr>
+            <tr>
+                <td>Líder da Equipe</td>
+                <td style="color: blue; font-style: italic;">Letícia Caixeta</td>
+                <td>09/09/2024</td>
+            </tr>
+        </tbody>
+    </table>
+    
+</body>
+</html>

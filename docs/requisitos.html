@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documento de Requisitos</title>
+</head>
+<body>
+
+    <header>
+        <h1>Informações do Documento de Requisitos</h1>
+        <p><strong>Título do documento:</strong> Documento de Requisitos do Deu Pet</p>
+        <p><strong>Autores:</strong></p>
+        <ul>
+            <li>Ana Julia Alves Ferreira Silverio</li>
+            <li>Letícia Caixeta de Araujo</li>
+            <li>Paula Fernanda Rosa do Nascimento</li>
+            <li>Manuela Oliveira Rocha e Sousa</li>
+            <li>Vitória Cristina Borba Vilela</li>
+        </ul>
+
+    </header>
+
+    <section>
+        <h2>Histórico de Revisões</h2>
+        <table border="1">
+            <thead>
+                <tr>
+                    <th>Revisão</th>
+                    <th>Data</th>
+                    <th>Descrição</th>
+                    <th>Autor</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>01</td>
+                    <td>02/09/24</td>
+                    <td>Elaboração da primeira versão do documento.</td>
+                    <td>Letícia, Paula e Vitória</td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>07/09/24</td>
+                    <td>Adição da matriz de rastreabilidade</td>
+                    <td>Ana Julia e Manuela</td>
+                </tr>
+            </tbody>
+        </table>
+    </section>
+
+    <section>
+        <h2>Índice</h2>
+        <ul>
+            <li><a href="#introducao">1. Introdução</a></li>
+            <li><a href="#descricao-geral">2. Descrição Geral do Sistema</a></li>
+            <li><a href="#requisitos-funcionais">3. Requisitos Funcionais</a></li>
+            <li><a href="#requisitos-nao-funcionais">4. Requisitos Não-Funcionais</a></li>
+            <li><a href="#requisitos-de-interface">5.Requisitos de Interface</a></li>
+            <li><a href="#matriz-de-rastreabilidade">6.Matriz de Rastreabilidade</a></li>
+            <li><a href="#assinaturas">7.Assinaturas</a></li>
+        </ul>
+    </section>
+
+    <section id="introducao">
+        <h2>1. Introdução</h2>
+        <p>Este documento tem como objetivo apresentar uma descrição detalhada dos requisitos do aplicativo Deu Pet. Por meio deste, o cliente tomará conhecimento das funcionalidades do projeto e os desenvolvedores terão uma noção de como implementar essas funcionalidades.</p>
+    </section>
+
+    <section>
+        <h3>1.1 Objetivos</h3>
+        <p>Dentre os objetivos deste documento estão o de listar da forma mais clara possível, os requisitos funcionais, não funcionais e de interface do sistema em questão. Assim, como dito anteriormente, o cliente tomará conhecimento do que o sistema fará e os desenvolvedores de como poderão implementar as funcionalidades.</p>
+    </section>
+
+    <section>
+        <h3>1.2 Escopo</h3>
+        <p>O presente documento visa ser escrito de forma abrangente e clara para que possa ser utilizado por todos os desenvolvedores, analistas e arquitetos envolvidos e ainda ser compreendido pelo cliente.</p>
+    </section>
+
+    <section>
+        <h3>1.3 Visão Geral do Documento</h3>
+        <p>A seguir são apresentadas as divisões deste documento e uma rápida descrição de cada seção:</p>
+        <ul>
+            <li><strong>Seção 1</strong> - Introdução</li>
+            <li><strong>Seção 2</strong> – Descrição Geral do Sistema: descreve o escopo do sistema e seus usuários de maneira geral.</li>
+            <li><strong>Seção 3</strong> – Requisitos Funcionais: especifica todos os requisitos funcionais planejados para o sistema.</li>
+            <li><strong>Seção 4</strong> – Requisitos Não-Funcionais: especifica todos os requisitos não-funcionais da primeira iteração do sistema.</li>
+            <li><strong>Seção 5</strong> – Requisitos de Interface: especifica todos os requisitos de interface planejados para o sistema.</li>
+            <li><strong>Seção 6</strong> – Matriz de Rastreabilidade</li>
+            <li><strong>Seção 7</strong> - Assinaturas</li>
+        </ul>
+    </section>
+
+    <section>
+        <h3>1.4 Padrões e Convenções</h3>
+        <h4>1.4.1 – Identificação dos Requisitos</h4>
+        <p>Para a especificação dos requisitos utilizaremos a seguinte representação:</p>
+        <p><strong>[TIPODOREQUISITONúmero] Nome</strong></p>
+        <p>O campo TIPODOREQUISITO poderá ser especificado pelos códigos RF (Requisitos Funcionais), NF (Requisitos Não-Funcionais) ou RI (Requisitos Funcionais de Interface). Já o campo Número será preenchido com um número correspondente à ordem em que os requisitos aparecem no documento.</p>
+
+        <h4>1.4.2 – Prioridade dos Requisitos</h4>
+        <p>A cada requisito será atribuída uma prioridade. A descrição de cada uma segue abaixo:</p>
+        <ul>
+            <li><strong>Essencial:</strong> requisito imprescindível. Sem ele, o sistema não funcionará.</li>
+            <li><strong>Importante:</strong> requisito que deve ser implementado, mas, se não for, o sistema funcionará do mesmo jeito, mas de maneira insatisfatória.</li>
+            <li><strong>Desejável:</strong> requisito que trará um diferencial adicional ao sistema. Por isso, pode ser deixado para ser implementado por último ou em próximas iterações.</li>
+        </ul>
+    </section>
+
+    <section id="descricao-geral"></section>
+        <h2>2. Descrição Geral do Sistema</h2>
+        <p>A necessidade de um ambiente para auxiliar no processo de adoção de pets de forma online foi necessária atualmente. Há uma grande quantidade de animais para adoção em ONG’s, porém a divulgação desses animais não costuma ser efetiva, dificultando o processo de adoção.</p>
+        <p>Dessa forma, é importante um sistema que facilite o processo de adoção e, além disso, centralize em um só local diferentes necessidades para os cuidados com os pets.</p>
+        <p>As funcionalidades do sistema serão mostradas, à medida que os requisitos forem explicados, visto que elas convergem para a ideia do software dita anteriormente.</p>
+    </section>
+
+    <section>
+        <h3>2.1 Escopo Negativo</h3>
+        <p>Não fazem parte do escopo dessa proposta serviços tais como:</p>
+        <ul>
+            <li>Desenvolvimento de funcionalidades extras: só serão implementadas as funcionalidades explicitamente descritas.</li>
+            <li>Controles de segurança sofisticados: a segurança do acesso dos usuários será com senha cadastrada.</li>
+            <li>Comprometimento em disponibilizar o software nem de oferecer treinamento de instalação, configuração, administração e utilização do sistema desenvolvido.</li>
+        </ul>
+    </section>
+
+    <section id="requisitos-funcionais">
+        <h2>3. Requisitos Funcionais</h3>
+        <h3>[RF001] Cadastrar usuário</h3>
+        <p>Requisito básico para permitir que os usuários entrem no sistema como pessoas interessadas em adoção de animais, tendo como entrada seus dados pessoais. Vários usuários poderão se cadastrar.</p>
+        <p><strong>Prioridade:</strong></p>
+        <ul>
+            <li>✓ Essencial</li>
+            <li>☐ Importante</li>
+            <li>☐ Desejável</li>
+        </ul>
+
+        <h3>[RF002] Cadastrar ONG e/ou protetor</h3>
+        <p>Permite que a ONG e/ou protetores possam se cadastrar para usar as funcionalidades do aplicativo.</p>
+        <p><strong>Prioridade:</strong></p>
+        <ul>
+            <li>✓ Essencial</li>
+            <li>☐ Importante</li>
+            <li>☐ Desejável</li>
+        </ul>
+
+        <h3>[RF003] Cadastrar pets</h3>
+        <p>Permite que o usuário divulgue os pets que estão disponíveis para a adoção.</p>
+        <p><strong>Prioridade:</strong></p>
+        <ul>
+            <li>✓ Essencial</li>
+            <li>☐ Importante</li>
+            <li>☐ Desejável</li>
+        </ul>
+
+        <h3>[RF004] Buscar animais disponíveis</h3>
+        <p>O sistema terá um mecanismo de busca que selecionará os animais disponíveis para adoção e retornará essa lista para o usuário interessado.</p>
+        <p><strong>Prioridade:</strong></p>
+        <ul>
+            <li>✓ Essencial</li>
+            <li>☐ Importante</li>
+            <li>☐ Desejável</li>
+        </ul>
+
+        <h3>[RF005] Chat para troca de mensagens</h3>
+        <p>O sistema terá um chat para que os interessados em algum animal demonstrem interesse e conversem com os respectivos cuidadores dos pets para possíveis dúvidas e conversar sobre a adoção.</p>
+        <p><strong>Prioridade:</strong></p>
+        <ul>
+            <li>✓ Essencial</li>
+            <li>☐ Importante</li>
+            <li>☐ Desejável</li>
+        </ul>
+
+        <h3>[RF006] Geração de relatórios das adoções realizadas</h3>
+        <p>O sistema deve gerar relatórios com os animais já adotados para melhor acompanhamento no processo de pós-adoção.</p>
+        <p><strong>Prioridade:</strong></p>
+        <ul>
+            <li>☐ Essencial</li>
+            <li>✓ Importante</li>
+            <li>☐ Desejável</li>
+        </ul>
+
+        <h3>[RF007] Notificações</h3>
+        <p>O sistema deve enviar notificações sobre animais recentemente cadastrados no aplicativo.</p>
+        <p><strong>Prioridade:</strong></p>
+        <ul>
+            <li>☐ Essencial</li>
+            <li>✓ Importante</li>
+            <li>☐ Desejável</li>
+        </ul>
+
+        <h3>[RF008] Login no sistema</h3>
+        <p>Permite que tanto usuários quanto ONGs e/ou protetores forneçam dados de login (e-mail e senha) para acessar o aplicativo.</p>
+        <p><strong>Prioridade:</strong></p>
+        <ul>
+            <li>✓ Essencial</li>
+            <li>☐ Importante</li>
+            <li>☐ Desejável</li>
+        </ul>
+
+        <h3>[RF009] Logout no sistema</h3>
+        <p>Permite que tanto usuários quanto ONGs e/ou protetores possam encerrar suas sessões, perdendo os privilégios de acesso e sendo redirecionados para a página de login.</p>
+        <p><strong>Prioridade:</strong></p>
+        <ul>
+            <li>✓ Essencial</li>
+            <li>☐ Importante</li>
+            <li>☐ Desejável</li>
+        </ul>
+
+        <h3>[RF010] Alteração das informações dos animais</h3>
+        <p>Funcionalidade que possibilita que as ONGs e/ou protetores possam realizar alterações nos dados dos animais disponíveis para a adoção, como imagens e descrições.</p>
+        <p><strong>Prioridade:</strong></p>
+        <ul>
+            <li>☐ Essencial</li>
+            <li>✓ Importante</li>
+            <li>☐ Desejável</li>
+        </ul>
+
+        <h3>[RF011] Consulta de ONGs e/ou protetores</h3>
+        <p>O sistema deverá possibilitar que os usuários consigam acessar informações sobre a ONG e/ou protetor independente que está responsável pelo animal. </p>
+        <p><strong>Prioridade:</strong></p>
+        <ul>
+            <li>☐ Essencial</li>
+            <li>✓ Importante</li>
+            <li>☐ Desejável</li>
+        </ul>
+
+        <h3>[RF012] Lista de favoritos</h3>
+        <p>O usuário poderá criar uma lista com os animais do seu interesse, de forma a possibilitar a análise de qual deles poderá atender melhor as suas expectativas antes de prosseguir com o processo de adoção.</p>
+        <p><strong>Prioridade:</strong></p>
+        <ul>
+            <li>☐ Essencial</li>
+            <li>☐ Importante</li>
+            <li>✓ Desejável</li>
+        </ul>
+    
+    <section id="requisitos-nao-funcionais">
+        <h2>4. Requisitos Não-Funcionais</h2>
+        <p>Esta seção apresenta os requisitos não-funcionais do sistema em detalhes. Todos os requisitos não-funcionais aqui apresentados são essenciais para o bom funcionamento do sistema.</p>
+
+        <h3>[NF001] Interface gráfica com o usuário</h3>
+        <p>A interface deverá ser amigável, simples e intuitiva.</p>
+        <p><strong>Prioridade:</strong></p>
+        <ul>
+            <li>☐ Essencial</li>
+            <li>✓ Importante</li>
+            <li>☐ Desejável</li>
+        </ul>
+
+        <h3>[NF002] Conexão</h3>
+        <p>O sistema deve funcionar quando o dispositivo tiver acesso à internet.</p>
+        <p><strong>Prioridade:</strong></p>
+        <ul>
+            <li>✓ Essencial</li>
+            <li>☐ Importante</li>
+            <li>☐ Desejável</li>
+        </ul>
+
+        <h3>[NF003] Consistência dos dados</h3>
+        <p>Caso ocorra algum erro no processamento de uma transação, o programa deve retornar para um estado anterior consistente, sem que haja o comprometimento da coerência dos dados armazenados.</p>
+        <p><strong>Prioridade:</strong></p>
+        <ul>
+            <li>☐ Essencial</li>
+            <li>✓ Importante</li>
+            <li>☐ Desejável</li>
+        </ul>
+
+        <h3>[NF004] Testabilidade da aplicação e identificação de falhas</h3>
+        <p>Testes unitários, testes integrados, dentre outros, serão realizados visando garantir o correto funcionamento do aplicativo.</p>
+        <p><strong>Prioridade:</strong></p>
+        <ul>
+            <li>☐ Essencial</li>
+            <li>✓ Importante</li>
+            <li>☐ Desejável</li>
+        </ul>
+
+        <h3>[NF005] Restrições de acesso</h3>
+        <p>Cada cliente utilizará um login e uma senha para poder acessar o sistema. Ou seja, cada ator terá acesso a funcionalidades personalizadas.</p>
+        <p><strong>Prioridade:</strong></p>
+        <ul>
+            <li>✓ Essencial</li>
+            <li>☐ Importante</li>
+            <li>☐ Desejável</li>
+        </ul>
+
+        <h3>[NF006] Suporte para funcionamento em larga escala de usuários</h3>
+        <p>O aplicativo deverá ser desenvolvido de forma que o crescimento exponencial do número de usuários não prejudique o funcionamento e o desempenho do sistema.</p>
+        <p><strong>Prioridade:</strong></p>
+        <ul>
+            <li>✓ Essencial</li>
+            <li>☐ Importante</li>
+            <li>☐ Desejável</li>
+        </ul>
+
+        <h3>[NF007] Hardware</h3>
+        <p>O sistema deve funcionar em smartphones com Android a partir da versão 4.4 e iOS a partir da versão 10.</p>
+        <p><strong>Prioridade:</strong></p>
+        <ul>
+            <li>☐ Essencial</li>
+            <li>☐ Importante</li>
+            <li>✓ Desejável</li>
+        </ul>
+    </section>
+
+    <section id="requisitos-de-interface">
+        <h2>5. Requisitos de Interface</h2>
+        <p>Esta seção apresenta em detalhes os requisitos de interface do sistema. Especificam como um sistema de software interage com outros sistemas, usuários e hardware. Esses requisitos são fundamentais para garantir que o software possa se comunicar de maneira eficaz e eficiente com outras partes do ambiente de tecnologia ou com os usuários finais.</p>
+
+        <h3>[RI001] Acessibilidade</h3>
+        <p>O sistema deve funcionar corretamente com leitores de telas e oferecer recursos para ajuste de contraste, tamanho e fonte.</p>
+        <p><strong>Prioridade:</strong></p>
+        <ul>
+            <li>☐ Essencial</li>
+            <li>✓ Importante</li>
+            <li>☐ Desejável</li>
+        </ul>
+
+        <h3>[RI002] Responsividade</h3>
+        <p>O layout do sistema deve se adaptar a diferentes tamanhos de tela.</p>
+        <p><strong>Prioridade:</strong></p>
+        <ul>
+            <li>☐ Essencial</li>
+            <li>✓ Importante</li>
+            <li>☐ Desejável</li>
+        </ul>
+
+        <h3>[RI003] Instruções de uso</h3>
+        <p>A interface deve fornecer instruções claras no primeiro uso para orientar os usuários durante suas interações.</p>
+        <p><strong>Prioridade:</strong></p>
+        <ul>
+            <li>☐ Essencial</li>
+            <li>☐ Importante</li>
+            <li>✓ Desejável</li>
+        </ul>
+    </section>
+
+    <section id="matriz-de-rastreabilidade"></section>
+        <h2>6. Matriz de Rastreabilidade</h2>
+        <img src="images/matriz.png" alt="Matriz de Rastreabilidade de Requisitos" width="1309" height="889">
+    </section>
+
+    <section id="assinaturas"></section>
+        <h2>7. Assinaturas</h2>
+        <p>Os abaixo assinados estão de acordo com o conteúdo deste documento.</p>
+
+        <div style="border: 1px solid black; padding: 10px; margin-bottom: 10px;">
+            <p><strong>Data:</strong> 02/09/2024</p>
+            <p><strong style="color: blue; font-style: italic;">Daniela Justiniano de Sousa Pereira</strong><br>
+               Gerente do Projeto</p>
+        </div>
+
+        <div style="border: 1px solid black; padding: 10px; margin-top: 10px;">
+            <p><strong>Data:</strong> 02/09/2024</p>
+            <p><strong style="color: blue; font-style: italic;">Letícia Caixeta</strong><br>
+               Líder da Equipe</p>
+        </div>
+    </section>
+
+</body>
+</html>
