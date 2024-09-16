@@ -4,682 +4,733 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Documento de Visão</title>
+  <title>Deu Pet - Documento de Visão</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="" />
+    <meta name="author" content="http://webthemez.com" />
+    <!-- css -->
+    <link href="../css/bootstrap.min.css" rel="stylesheet" />
+    <link href="../css/fancybox/jquery.fancybox.css" rel="stylesheet">
+    <link href="../css/jcarousel.css" rel="stylesheet" />
+    <link href="../css/flexslider.css" rel="stylesheet" />
+    <link href="../css/style.css" rel="stylesheet" />
 </head>
 
 <body>
-
-  <section>
-    <h1 style="text-align: center;">Documento de Visão</h1>
-    <h2>Histórico de Revisão</h2>
-
-    <table border="1">
-      <thead>
-        <tr>
-          <th>Data</th>
-          <th>Versão</th>
-          <th>Descrição</th>
-          <th>Autores</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>16/08/2024</td>
-          <td>1.0</td>
-          <td>Elaboração do Documento</td>
-          <td>Ana Julia Alves, Letícia Caixeta, Manuela Oliveira, Paula Nascimento, Vitória Cristina</td>
-        </tr>
-      </tbody>
-    </table>
-  </section>
-
-  <section>
-    <h2>1. Introdução</h2>
-    <h3>1.1 Propósito</h3>
-    <p>O propósito desse documento de visão é retratar os objetivos e ferramentas para o desenvolvimento da aplicação
-      "Deu Pet".</p>
-
-    <h3>1.2 Escopo</h3>
-    <p>A intenção deste projeto consiste em realizar a conexão entre ONGs e protetores autônomos de animais a possíveis
-      pessoas interessadas em oferecer um lar para esses pets de forma que facilite o processo de adoção, simplificando
-      a busca e seleção de animais pelo adotante.</p>
-
-    <h3>1.3 Definições, acrônimos e abreviações</h3>
-    <ul>
-      <li>App – Aplicativo mobile</li>
-      <li>SO – Sistema Operacional</li>
-      <li>ONGs – Organizações não governamentais que cuidam de animais abandonados.</li>
-      <li>Back-end – Responsável por armazenar as informações de encomendas e implementar as regras de negócios.</li>
-      <li>Front-end – Responsável pela interface que interage com o usuário recebendo a priori as informações dos
-        animais.</li>
-      <li>Chat – Funcionalidade que permite uma conversa direta entre um usuário e outro.</li>
-      <li>Flutter – Framework que permite a criação de aplicativos móveis e web com uma única base de código.</li>
-      <li>Java – Linguagem de programação usada para criar aplicativos, conhecida pela sua confiabilidade e desempenho.
-      </li>
-      <li>Spring Boot – Ferramenta para Java que facilita a criação e configuração de aplicativos.</li>
-    </ul>
-
-    <h3>1.4 Visão Geral</h3>
-    <p>O documento em questão está estruturado de forma que se divide em 6 partes das quais a primeira delas trata da
-      introdução onde é delineada a visão do projeto. Na segunda seção apresentamos o problema, a descrição do produto e
-      as oportunidades de negócio. Na terceira seção são exploradas as descrições das partes interessadas e dos
-      usuários, e o público-alvo é identificado. Na quarta seção, a visão geral do produto é detalhada, oferecendo uma
-      especificação ampla e abrangente. Por fim, na quinta seção, os recursos do produto são descritos e na sexta seção
-      são abordadas as restrições de design, implementação, segurança e uso da aplicação.</p>
-  </section>
-
-  <section>
-    <h2>2. Posicionamento</h2>
-    <h3>2.1 Oportunidade de Negócio</h3>
-    <p>O Brasil é o segundo país do mundo com a maior população de animais de estimação, atrás apenas dos Estados
-      Unidos, com cerca de 84 milhões de pets, e a previsão é que esse número atinja 101 milhões até 2030. No entanto, o
-      país enfrenta um grave problema de aumento no abandono e maus-tratos de animais. Entre 2018 e 2020, o número de
-      pets em situação de vulnerabilidade mais que dobrou. Essa crise é agravada por preconceitos em relação à idade e
-      raça dos animais, burocracia nos processos de adoção e falta de informação. É crucial promover a conscientização
-      sobre adoção responsável e melhorar as políticas e processos de resgate para enfrentar essa questão. Além disso,
-      criar soluções criativas que incentivem a população a diminuir essas estimativas.</p>
-
-    <h3>2.2 Descrição do Problema</h3>
-    <table border="1">
-      <thead>
-        <tr>
-          <th>Descrição do Problema</th>
-          <th>O que afeta</th>
-          <th>Impacto disso</th>
-          <th>Solução viável</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>Falha na comunicação entre adotantes e ONGs ou protetores autônomos.</td>
-          <td>Realização das adoções.</td>
-          <td>Adoções prejudicadas, aumento do número de animais abandonados em situação de rua ou sobrecarregando as
-            ONGs e protetores autônomos.</td>
-          <td>Um meio de comunicação simples para propiciar o encontro de adotantes com pessoas e ONGs que cuidam de
-            animais abandonados para adoção e a criação de uma forma prática de marketing para os interessados.</td>
-        </tr>
-        <tr>
-          <td>Preconceito em relação à idade e raça dos animais.</td>
-          <td>Processo de adoção.</td>
-          <td>Redução na possibilidade de adoção desses animais, aumentando o tempo em abrigos.</td>
-          <td>Aplicação que ofereça maior visibilidade para esses animais e ofereça filtros de perfis para melhor
-            compatibilidade.</td>
-        </tr>
-        <tr>
-          <td>Falta de acompanhamento pós-adoção.</td>
-          <td>Bem-estar dos animais adotados.</td>
-          <td>Riscos de maus-tratos, abandono ou devolução dos animais após a adoção.</td>
-          <td>Sistema de acompanhamento, suporte e monitoramento do bem-estar dos animais pós-adoção.</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h3>2.3 Instrução de Posição do Produto</h3>
-    <p>O Deu Pet é uma plataforma inovadora desenvolvida para simplificar e aprimorar o processo de adoção de pets,
-      atendendo tanto ONGs quanto adotantes que buscam uma maneira eficiente e moderna de conectar-se.</p>
-    <p>Ao contrário dos métodos tradicionais de adoção, que frequentemente dependem de redes sociais e interações
-      presenciais, o Deu Pet oferece uma solução centralizada e acessível. Reunimos todas as ONGs em uma única
-      plataforma, permitindo que adotantes encontrem facilmente organizações próximas a eles. Além disso, nosso sistema
-      oferece filtros personalizados que ajudam a alinhar as preferências e necessidades dos adotantes com os pets
-      disponíveis, tornando o processo mais ágil e eficiente.</p>
-  </section>
-
-  <section>
-    <h2>3. Descrições da parte interessada e dos usuários </h2>
-    <h3>3.1 Demográficos de Mercado</h3>
-    <p>O Deu Pet é direcionado a dois segmentos principais: adotantes de pets, que buscam uma solução eficiente para encontrar animais para adoção, e ONGs de proteção animal, que precisam de uma plataforma para conectar-se a adotantes. O mercado de adoção está em crescimento, impulsionado pelo aumento da conscientização sobre o bem-estar animal e o uso de tecnologias digitais. </p>
-    <p>O Deu Pet busca ser reconhecido como a principal ferramenta de adoção, centralizando informações e facilitando a comunicação entre ONGs e adotantes, alinhando-se aos objetivos de promover adoções responsáveis e reduzir o abandono de animais. </p>
-
-    <h3>3.2 Resumo da Parte Interessada </h3>
-    <table border="1">
-      <thead>
-          <tr>
-              <th>Nome</th>
+<div id="wrapper">
+	<!-- start header -->
+    <header>
+        <div class="navbar navbar-default navbar-static-top">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+                  <a class="navbar-brand" href="../index.html"><img src="../img/logo.png" alt="logo"/></a>
+                </div>
+                <div class="navbar-collapse collapse ">
+                    <ul class="nav navbar-nav">
+                        <li><a href="../index.html">Home</a></li> 
+						<li class="active"><a href="../about.html">Projeto</a></li>
+						<li><a href="../services.html">Services</a></li>
+                        <li><a href="../portfolio.html">Portfolio</a></li>
+                        <li><a href="../pricing.html">Pricing</a></li>
+                        <li><a href="../contact.html">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+	</header><!-- end header -->
+<div class="documents">
+    <section>
+        <h1 style="text-align: center;">Documento de Visão</h1>
+        <h3 >Histórico de Revisão</h3>
+    
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Data</th> 
+              <th>Versão</th>
               <th>Descrição</th>
-              <th>Responsabilidade</th>
-          </tr>
-      </thead>
-      <tbody>
-          <tr>
-              <td>Comunidade</td>
-              <td>Grupo de pessoas interessadas na adoção de animais.</td>
-              <td>Participar ativamente da plataforma, adotando pets, fornecendo feedbacks e promovendo o projeto nas redes sociais e na comunidade local.</td>
-          </tr>
-          <tr>
-              <td>Governo</td>
-              <td>Órgãos públicos envolvidos em políticas de proteção animal e adoção.</td>
-              <td>Regulamentar e apoiar o projeto, garantindo que ele esteja alinhado com as leis de proteção animal e incentivando a adoção responsável.</td>
-          </tr>
-          <tr>
-              <td>Cliente</td>
-              <td>Usuários finais da plataforma, incluindo pessoas que desejam adotar os animais e organizações de proteção que informam pets disponíveis para adoção.</td>
-              <td>Utilizar a plataforma para adoção e fornecer feedback para melhorias no sistema.</td>
-          </tr>
-          <tr>
-              <td>Equipe</td>
-              <td>Estudantes de Sistemas de Informação que estão desenvolvendo o projeto como parte da disciplina Projeto e Desenvolvimento de Sistemas de Informação.</td>
-              <td>Documentar, desenvolver, testar e implementar a plataforma e gerenciar a evolução do projeto.</td>
-          </tr>
-          <tr>
-              <td>Patrocinadores</td>
-              <td>Empresas ou indivíduos que fornecem financiamento ou outros recursos para apoiar o desenvolvimento e manutenção do projeto.</td>
-              <td>Financiar e fornecer recursos para o desenvolvimento e operação da plataforma.</td>
-          </tr>
-          <tr>
-              <td>ONGs</td>
-              <td>Organizações não-governamentais que trabalham na proteção e adoção de animais.</td>
-              <td>Colaborar com o projeto, cadastrando os animais disponíveis para adoção e promovendo a plataforma para potencializar o alcance e sucesso na adoção.</td>
-          </tr>
-          <tr>
-              <td>Protetores autônomos</td>
-              <td>Indivíduos que, de forma independente, resgatam e cuidam de animais à espera de adoção.</td>
-              <td>Cadastrar os pets na plataforma e garantir que as adoções sejam realizadas de forma responsável.</td>
-          </tr>
-      </tbody>
-  </table>
-
-  <h3>3.3 Resumo de Usuários </h3>
+              <th>Autores</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>16/08/2024</td>
+              <td>1.0</td>
+              <td>Elaboração do Documento</td>
+              <td>Ana Julia Alves, Letícia Caixeta, Manuela Oliveira, Paula Nascimento, Vitória Cristina</td>
+            </tr>
+          </tbody>
+        </table>
+      </section>
+    
+      <section>
+        <h2>1. Introdução</h2>
+        <h3>1.1 Propósito</h3>
+        <p>O propósito desse documento de visão é retratar os objetivos e ferramentas para o desenvolvimento da aplicação
+          "Deu Pet".</p>
+    
+        <h3>1.2 Escopo</h3>
+        <p>A intenção deste projeto consiste em realizar a conexão entre ONGs e protetores autônomos de animais a possíveis
+          pessoas interessadas em oferecer um lar para esses pets de forma que facilite o processo de adoção, simplificando
+          a busca e seleção de animais pelo adotante.</p>
+    
+        <h3>1.3 Definições, acrônimos e abreviações</h3>
+        <ul>
+          <li>App – Aplicativo mobile</li>
+          <li>SO – Sistema Operacional</li>
+          <li>ONGs – Organizações não governamentais que cuidam de animais abandonados.</li>
+          <li>Back-end – Responsável por armazenar as informações de encomendas e implementar as regras de negócios.</li>
+          <li>Front-end – Responsável pela interface que interage com o usuário recebendo a priori as informações dos
+            animais.</li>
+          <li>Chat – Funcionalidade que permite uma conversa direta entre um usuário e outro.</li>
+          <li>Flutter – Framework que permite a criação de aplicativos móveis e web com uma única base de código.</li>
+          <li>Java – Linguagem de programação usada para criar aplicativos, conhecida pela sua confiabilidade e desempenho.
+          </li>
+          <li>Spring Boot – Ferramenta para Java que facilita a criação e configuração de aplicativos.</li>
+        </ul>
+    
+        <h3>1.4 Visão Geral</h3>
+        <p>O documento em questão está estruturado de forma que se divide em 6 partes das quais a primeira delas trata da
+          introdução onde é delineada a visão do projeto. Na segunda seção apresentamos o problema, a descrição do produto e
+          as oportunidades de negócio. Na terceira seção são exploradas as descrições das partes interessadas e dos
+          usuários, e o público-alvo é identificado. Na quarta seção, a visão geral do produto é detalhada, oferecendo uma
+          especificação ampla e abrangente. Por fim, na quinta seção, os recursos do produto são descritos e na sexta seção
+          são abordadas as restrições de design, implementação, segurança e uso da aplicação.</p>
+      </section>
+    
+      <section>
+        <h2>2. Posicionamento</h2>
+        <h3>2.1 Oportunidade de Negócio</h3>
+        <p>O Brasil é o segundo país do mundo com a maior população de animais de estimação, atrás apenas dos Estados
+          Unidos, com cerca de 84 milhões de pets, e a previsão é que esse número atinja 101 milhões até 2030. No entanto, o
+          país enfrenta um grave problema de aumento no abandono e maus-tratos de animais. Entre 2018 e 2020, o número de
+          pets em situação de vulnerabilidade mais que dobrou. Essa crise é agravada por preconceitos em relação à idade e
+          raça dos animais, burocracia nos processos de adoção e falta de informação. É crucial promover a conscientização
+          sobre adoção responsável e melhorar as políticas e processos de resgate para enfrentar essa questão. Além disso,
+          criar soluções criativas que incentivem a população a diminuir essas estimativas.</p>
+    
+        <h3>2.2 Descrição do Problema</h3>
+        <table border="1">
+          <thead>
+            <tr>
+              <th>Descrição do Problema</th>
+              <th>O que afeta</th>
+              <th>Impacto disso</th>
+              <th>Solução viável</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Falha na comunicação entre adotantes e ONGs ou protetores autônomos.</td>
+              <td>Realização das adoções.</td>
+              <td>Adoções prejudicadas, aumento do número de animais abandonados em situação de rua ou sobrecarregando as
+                ONGs e protetores autônomos.</td>
+              <td>Um meio de comunicação simples para propiciar o encontro de adotantes com pessoas e ONGs que cuidam de
+                animais abandonados para adoção e a criação de uma forma prática de marketing para os interessados.</td>
+            </tr>
+            <tr>
+              <td>Preconceito em relação à idade e raça dos animais.</td>
+              <td>Processo de adoção.</td>
+              <td>Redução na possibilidade de adoção desses animais, aumentando o tempo em abrigos.</td>
+              <td>Aplicação que ofereça maior visibilidade para esses animais e ofereça filtros de perfis para melhor
+                compatibilidade.</td>
+            </tr>
+            <tr>
+              <td>Falta de acompanhamento pós-adoção.</td>
+              <td>Bem-estar dos animais adotados.</td>
+              <td>Riscos de maus-tratos, abandono ou devolução dos animais após a adoção.</td>
+              <td>Sistema de acompanhamento, suporte e monitoramento do bem-estar dos animais pós-adoção.</td>
+            </tr>
+          </tbody>
+        </table>
+    
+        <h3>2.3 Instrução de Posição do Produto</h3>
+        <p>O Deu Pet é uma plataforma inovadora desenvolvida para simplificar e aprimorar o processo de adoção de pets,
+          atendendo tanto ONGs quanto adotantes que buscam uma maneira eficiente e moderna de conectar-se.</p>
+        <p>Ao contrário dos métodos tradicionais de adoção, que frequentemente dependem de redes sociais e interações
+          presenciais, o Deu Pet oferece uma solução centralizada e acessível. Reunimos todas as ONGs em uma única
+          plataforma, permitindo que adotantes encontrem facilmente organizações próximas a eles. Além disso, nosso sistema
+          oferece filtros personalizados que ajudam a alinhar as preferências e necessidades dos adotantes com os pets
+          disponíveis, tornando o processo mais ágil e eficiente.</p>
+      </section>
+    
+      <section>
+        <h2>3. Descrições da parte interessada e dos usuários </h2>
+        <h3>3.1 Demográficos de Mercado</h3>
+        <p>O Deu Pet é direcionado a dois segmentos principais: adotantes de pets, que buscam uma solução eficiente para encontrar animais para adoção, e ONGs de proteção animal, que precisam de uma plataforma para conectar-se a adotantes. O mercado de adoção está em crescimento, impulsionado pelo aumento da conscientização sobre o bem-estar animal e o uso de tecnologias digitais. </p>
+        <p>O Deu Pet busca ser reconhecido como a principal ferramenta de adoção, centralizando informações e facilitando a comunicação entre ONGs e adotantes, alinhando-se aos objetivos de promover adoções responsáveis e reduzir o abandono de animais. </p>
+    
+        <h3>3.2 Resumo da Parte Interessada </h3>
+        <table border="1">
+          <thead>
+              <tr>
+                  <th>Nome</th>
+                  <th>Descrição</th>
+                  <th>Responsabilidade</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>Comunidade</td>
+                  <td>Grupo de pessoas interessadas na adoção de animais.</td>
+                  <td>Participar ativamente da plataforma, adotando pets, fornecendo feedbacks e promovendo o projeto nas redes sociais e na comunidade local.</td>
+              </tr>
+              <tr>
+                  <td>Governo</td>
+                  <td>Órgãos públicos envolvidos em políticas de proteção animal e adoção.</td>
+                  <td>Regulamentar e apoiar o projeto, garantindo que ele esteja alinhado com as leis de proteção animal e incentivando a adoção responsável.</td>
+              </tr>
+              <tr>
+                  <td>Cliente</td>
+                  <td>Usuários finais da plataforma, incluindo pessoas que desejam adotar os animais e organizações de proteção que informam pets disponíveis para adoção.</td>
+                  <td>Utilizar a plataforma para adoção e fornecer feedback para melhorias no sistema.</td>
+              </tr>
+              <tr>
+                  <td>Equipe</td>
+                  <td>Estudantes de Sistemas de Informação que estão desenvolvendo o projeto como parte da disciplina Projeto e Desenvolvimento de Sistemas de Informação.</td>
+                  <td>Documentar, desenvolver, testar e implementar a plataforma e gerenciar a evolução do projeto.</td>
+              </tr>
+              <tr>
+                  <td>Patrocinadores</td>
+                  <td>Empresas ou indivíduos que fornecem financiamento ou outros recursos para apoiar o desenvolvimento e manutenção do projeto.</td>
+                  <td>Financiar e fornecer recursos para o desenvolvimento e operação da plataforma.</td>
+              </tr>
+              <tr>
+                  <td>ONGs</td>
+                  <td>Organizações não-governamentais que trabalham na proteção e adoção de animais.</td>
+                  <td>Colaborar com o projeto, cadastrando os animais disponíveis para adoção e promovendo a plataforma para potencializar o alcance e sucesso na adoção.</td>
+              </tr>
+              <tr>
+                  <td>Protetores autônomos</td>
+                  <td>Indivíduos que, de forma independente, resgatam e cuidam de animais à espera de adoção.</td>
+                  <td>Cadastrar os pets na plataforma e garantir que as adoções sejam realizadas de forma responsável.</td>
+              </tr>
+          </tbody>
+      </table>
+    
+      <h3>3.3 Resumo de Usuários </h3>
+          <table border="1">
+            <thead>
+              <tr>
+                  <th>Grupo</th>
+                  <th>Descrição</th>
+                  <th>Responsabilidade</th>
+              </tr>
+          </thead>
+          <tbody>
+              <tr>
+                  <td>Adotante</td>
+                  <td>Pessoa interessada em realizar a adoção de um animal através da plataforma. </td>
+                  <td>Buscar e adotar um pet no aplicativo. </td>
+              </tr>
+              <tr>
+                  <td>ONG</td>
+                  <td>Organização que resgata e cuida de animais, disponibilizando-os para adoção. </td>
+                  <td>Cadastrar os animais no aplicativo, fornecendo informações detalhadas. </td>
+              </tr>
+              <tr>
+                  <td>Protetor autônomo</td>
+                  <td>Indivíduos que, de forma independente, resgatam e cuidam de animais à espera de adoção. </td>
+                  <td>Cadastrar os animais no aplicativo, fornecendo informações detalhadas.   </td>
+              </tr>
+          </tbody>
+      </table>
+    
+      <h3>3.4 Ambiente do Usuário</h3>
+      <p>Os adotantes e os representantes das ONGs e protetores autônomos utilizarão dispositivos móveis como smartphones e tablets para acessar a plataforma "Deu Pet". O ambiente de trabalho dos usuários é majoritariamente móvel, permitindo que eles acessem a aplicação de qualquer lugar, o que facilita a conexão entre adotantes e ONGs. </p>
+      <ul>
+        <li><strong>Dispositivos Utilizados:</strong> Principalmente smartphones com Android (versão >= 4.4) e iOS (versão >= 10). A plataforma precisa ser responsiva e funcionar em diferentes tamanhos de tela. </li>
+        <li><strong>Conectividade:</strong> O acesso à internet é crucial para o uso da plataforma. A aplicação deve funcionar bem tanto em conexões de alta velocidade quanto em redes móveis mais lentas. </li>
+        <li><strong>Integração com Outros Aplicativos: </strong> A aplicação não depende de integração com outros aplicativos, mas deve permitir compartilhamento de informações via redes sociais e comunicação por e-mail ou aplicativos de mensagens. </li>
+        <li><strong>Ambiente Físico:</strong> Usuários podem estar em qualquer lugar, em casa, no trabalho ou em áreas públicas. Portanto, a interface deve ser intuitiva e de fácil navegação, considerando que os usuários podem acessar a plataforma em situações de mobilidade. </li>
+      </ul>
+    
+      <h3>3.5 Ambiente do Usuário</h3>
+      <h4>3.5.1 Equipe de Desenvolvimento</h4>
+      <table border="1">
+        <tr>
+            <th>Representantes</th>
+            <td>Paula e Manuela</td>
+        </tr>
+        <tr>
+            <th>Descrição</th>
+            <td>Desenvolve e mantém o back-end do aplicativo, lidando com lógica de negócio, integração com bancos de dados e APIs. Desenvolve a interface do usuário, garantindo uma experiência intuitiva e responsiva.</td>
+        </tr>
+        <tr>
+            <th>Tipo</th>
+            <td>Estudantes da UFU da disciplina PDSI1</td>
+        </tr>
+        <tr>
+            <th>Responsabilidade</th>
+            <td>
+                <ul>
+                    <li>Implementar a lógica de negócio.</li>
+                    <li>Integrar sistemas e bancos de dados.</li>
+                    <li>Desenvolver APIs robustas e seguras.</li>
+                    <li>Desenvolver interfaces de usuário ricas e responsivas.</li>
+                    <li>Garantir compatibilidade entre navegadores e dispositivos.</li>
+                    <li>Otimizar a experiência do usuário.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Critérios de Sucesso</th>
+            <td>
+                <ul>
+                    <li>Interfaces responsivas e intuitivas.</li>
+                    <li>Alta performance e usabilidade.</li>
+                    <li>APIs eficientes e escaláveis.</li>
+                    <li>Desempenho e segurança da aplicação.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Envolvimento</th>
+            <td>Alto</td>
+        </tr>
+        <tr>
+            <th>Problemas/Comentários</th>
+            <td>
+                <ul>
+                    <li>Compatibilidade entre dispositivos.</li>
+                    <li>Desafios de performance em dispositivos móveis.</li>
+                    <li>Dependência de sistemas externos.</li>
+                    <li>Desafios de performance em cargas elevadas.</li>
+                </ul>
+            </td>
+        </tr>
+      </table>
+    
+      <h4>3.5.2 Equipe de Gestão de Projeto </h4>
+      <table border="1">
+        <tr>
+            <th>Representantes</th>
+            <td>Professora Daniela</td>
+        </tr>
+        <tr>
+            <th>Descrição</th>
+            <td>Responsável pela coordenação geral do projeto, garantindo que os objetivos sejam atingidos dentro do prazo, escopo e orçamento.</td>
+        </tr>
+        <tr>
+            <th>Tipo</th>
+            <td>Professora da disciplina PDSI1 na UFU</td>
+        </tr>
+        <tr>
+            <th>Responsabilidade</th>
+            <td>
+                <ul>
+                    <li>Definir e monitorar o cronograma do projeto.</li>
+                    <li>Gerenciar recursos e orçamentos.</li>
+                    <li>Facilitar a comunicação entre todas as partes interessadas.</li>
+                    <li>Gerenciar riscos e mudanças.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Critérios de Sucesso</th>
+            <td>
+                <ul>
+                    <li>Conclusão do projeto dentro do prazo e orçamento estabelecidos.</li>
+                    <li>Satisfação das partes interessadas.</li>
+                    <li>Alcançar os objetivos estratégicos do projeto.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Envolvimento</th>
+            <td>Alto</td>
+        </tr>
+        <tr>
+            <th>Problemas/Comentários</th>
+            <td>
+                <ul>
+                    <li>Dependência de recursos críticos.</li>
+                    <li>Mudanças de escopo.</li>
+                </ul>
+            </td>
+        </tr>
+      </table>
+    
+      <h4>3.5.3 Scrum Master </h4>
+      <table border="1">
+        <tr>
+            <th>Representantes</th>
+            <td>Letícia</td>
+        </tr>
+        <tr>
+            <th>Descrição</th>
+            <td>Facilita a metodologia ágil no projeto, garantindo que a equipe siga as práticas de Scrum.</td>
+        </tr>
+        <tr>
+            <th>Tipo</th>
+            <td>Aluna da UFU da disciplina PDSI1</td>
+        </tr>
+        <tr>
+            <th>Responsabilidade</th>
+            <td>
+                <ul>
+                    <li>Definir e monitorar o cronograma do projeto.</li>
+                    <li>Gerenciar recursos e orçamentos.</li>
+                    <li>Facilitar a comunicação entre todas as partes interessadas.</li>
+                    <li>Gerenciar riscos e mudanças.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Critérios de Sucesso</th>
+            <td>
+                <ul>
+                    <li>Conclusão do projeto dentro do prazo e orçamento estabelecidos.</li>
+                    <li>Satisfação das partes interessadas.</li>
+                    <li>Alcançar os objetivos estratégicos do projeto.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Envolvimento</th>
+            <td>Alto</td>
+        </tr>
+        <tr>
+            <th>Problemas/Comentários</th>
+            <td>
+                <ul>
+                    <li>Dependência de recursos críticos.</li>
+                    <li>Mudanças de escopo.</li>
+                </ul>
+            </td>
+        </tr>
+      </table>
+    
+      <h4>3.5.4 Equipe de qualidade e testes de software</h4>
+      <table border="1">
+        <tr>
+            <th>Representantes</th>
+            <td>Vitória</td>
+        </tr>
+        <tr>
+            <th>Descrição</th>
+            <td>Responsável por garantir que o software desenvolvido atenda aos padrões de qualidade e funcione conforme especificado.</td>
+        </tr>
+        <tr>
+            <th>Tipo</th>
+            <td>Aluna da UFU da disciplina PDSI1</td>
+        </tr>
+        <tr>
+            <th>Responsabilidade</th>
+            <td>
+                <ul>
+                    <li>Planejar e executar testes (funcionais, regressão, carga, etc.).</li>
+                    <li>Garantir a cobertura de testes adequada.</li>
+                    <li>Relatar defeitos e acompanhar a resolução.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Critérios de Sucesso</th>
+            <td>
+                <ul>
+                    <li>Conclusão do projeto dentro do prazo e orçamento estabelecidos.</li>
+                    <li>Satisfação das partes interessadas.</li>
+                    <li>Alcançar os objetivos estratégicos do projeto.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Envolvimento</th>
+            <td>Alto</td>
+        </tr>
+        <tr>
+            <th>Problemas/Comentários</th>
+            <td>
+                <ul>
+                    <li>Dependência de recursos críticos.</li>
+                    <li>Mudanças de escopo.</li>
+                </ul>
+            </td>
+        </tr>
+      </table>
+    
+      <h4>3.5.5 DevOps</h4>
+    
+      <table border="1">
+        <tr>
+            <th>Representantes</th>
+            <td>Ana Júlia</td>
+        </tr>
+        <tr>
+            <th>Descrição</th>
+            <td>Responsável por garantir que o software desenvolvido atenda aos padrões de qualidade e funcione conforme especificado.</td>
+        </tr>
+        <tr>
+            <th>Tipo</th>
+            <td>Aluna da UFU da disciplina PDSI1</td>
+        </tr>
+        <tr>
+            <th>Responsabilidade</th>
+            <td>
+                <ul>
+                    <li>Configurar pipelines de CI/CD.</li>
+                    <li>Gerenciar infraestruturas como código.</li>
+                    <li>Monitorar e otimizar o ambiente de produção.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Critérios de Sucesso</th>
+            <td>
+                <ul>
+                    <li>Deploys automatizados e sem falhas.</li>
+                    <li>Alta disponibilidade e resiliência do sistema.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Envolvimento</th>
+            <td>Alto</td>
+        </tr>
+        <tr>
+            <th>Problemas/Comentários</th>
+            <td>
+                <ul>
+                    <li>Desafios com escalabilidade.</li>
+                    <li>Dependência de serviços de terceiros.</li>
+                </ul>
+            </td>
+        </tr>
+      </table>
+    
+      <h3>3.6 Perfil dos Usuários</h3>
+      <h4>3.6.1 Adotante de Pets</h4>
+      <table border="1">
+        <tr>
+            <th>Representante</th>
+            <td>Adotantes</td>
+        </tr>
+        <tr>
+            <th>Descrição</th>
+            <td>Este usuário é um indivíduo ou família interessada em adotar um animal de estimação. Pode ter pouca experiência com adoção e procura uma ferramenta simples e intuitiva para navegar no processo.</td>
+        </tr>
+        <tr>
+            <th>Tipo</th>
+            <td>Usuário Informal</td>
+        </tr>
+        <tr>
+            <th>Responsabilidade</th>
+            <td>
+                <ul>
+                    <li>Buscar informações sobre pets disponíveis para adoção.</li>
+                    <li>Entrar em contato com ONGs para saber mais sobre o processo de adoção.</li>
+                    <li>Completar o processo de adoção seguindo as orientações fornecidas.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Critérios de Sucesso</th>
+            <td>
+                <ul>
+                    <li>Facilidade em encontrar um pet que se adeque ao seu perfil e necessidades.</li>
+                    <li>Processo de adoção simples e sem complicações.</li>
+                    <li>Sentir-se apoiado e informado durante todo o processo.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Envolvimento</th>
+            <td>Alto</td>
+        </tr>
+        <tr>
+            <th>Problemas/Comentários</th>
+            <td>
+                <ul>
+                    <li>Não possuir um smartphone com os pré-requisitos elencados ou não ter acesso à internet.</li>
+                </ul>
+            </td>
+        </tr>
+      </table>
+    
+      <h4>3.6.2 Representantes das ONGs e Protetores Autônomos </h4>
+      <table border="1">
+        <tr>
+            <th>Representante</th>
+            <td>Representantes das ONGs</td>
+        </tr>
+        <tr>
+            <th>Descrição</th>
+            <td>Indivíduos que atuam em ONGs ou como protetores autônomos, responsáveis por cadastrar animais disponíveis para adoção.</td>
+        </tr>
+        <tr>
+            <th>Tipo</th>
+            <td>Representantes das ONGs e Protetores autônomos</td>
+        </tr>
+        <tr>
+            <th>Responsabilidade</th>
+            <td>
+                <ul>
+                    <li>Manter o cadastro atualizado dos animais disponíveis na plataforma.</li>
+                    <li>Facilitar a comunicação com os adotantes, respondendo perguntas e agendando encontros.</li>
+                    <li>Garantir que o processo de adoção seja realizado de forma responsável e transparente.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Critérios de Sucesso</th>
+            <td>
+                <ul>
+                    <li>Facilidade em cadastrar e gerenciar perfis de animais.</li>
+                    <li>Comunicação eficiente com os adotantes.</li>
+                    <li>Alta taxa de adoções bem-sucedidas.</li>
+                </ul>
+            </td>
+        </tr>
+        <tr>
+            <th>Envolvimento</th>
+            <td>Alto, com uso diário da plataforma para gerenciar os perfis dos animais e interagir com os adotantes.</td>
+        </tr>
+        <tr>
+            <th>Problemas/Comentários</th>
+            <td>
+                <ul>
+                    <li>Necessidade de ferramentas que simplifiquem a gestão dos perfis dos animais e a comunicação com os adotantes.</li>
+                </ul>
+            </td>
+        </tr>
+      </table>
+    
+      <h3>3.7 Principais Necessidades dos Usuários e dos Envolvidos </h3>
       <table border="1">
         <thead>
           <tr>
-              <th>Grupo</th>
-              <th>Descrição</th>
-              <th>Responsabilidade</th>
+              <th>Necessidade</th>
+              <th>Interesse </th>
+              <th>Solução Proposta</th>
           </tr>
       </thead>
       <tbody>
           <tr>
-              <td>Adotante</td>
-              <td>Pessoa interessada em realizar a adoção de um animal através da plataforma. </td>
-              <td>Buscar e adotar um pet no aplicativo. </td>
+              <td>Facilidade de comunicação entre adotantes e ONGs </td>
+              <td>Necessidade de uma comunicação rápida e eficaz para garantir que os adotantes possam obter informações precisas sobre os pets. </td>
+              <td>Sistema de chat dentro do aplicativo que permita troca de mensagens em tempo real, além de notificações para novos contatos. </td>
           </tr>
           <tr>
-              <td>ONG</td>
-              <td>Organização que resgata e cuida de animais, disponibilizando-os para adoção. </td>
-              <td>Cadastrar os animais no aplicativo, fornecendo informações detalhadas. </td>
+              <td>Processo de adoção simplificado </td>
+              <td>Minimizar burocracia e garantir que o processo de adoção seja rápido e acessível. </td>
+              <td>Interface guiada que simplifique o processo de adoção, desde a seleção do pet até a finalização dos trâmites de adoção. </td>
           </tr>
           <tr>
-              <td>Protetor autônomo</td>
-              <td>Indivíduos que, de forma independente, resgatam e cuidam de animais à espera de adoção. </td>
-              <td>Cadastrar os animais no aplicativo, fornecendo informações detalhadas.   </td>
-          </tr>
+            <td>Acesso a informações detalhadas dos pets </td>
+            <td>Garantir que os adotantes tenham todas as informações necessárias para tomar uma decisão informada. </td>
+            <td>Perfis detalhados dos animais, incluindo histórico médico, comportamento, e características especiais. </td>
+        </tr>
+        <tr>
+          <td>Suporte pós-adoção </td>
+          <td>Manter o bem-estar dos animais após a adoção e garantir apoio contínuo aos adotantes. </td>
+          <td>Sistema de acompanhamento pós-adoção com suporte e dicas para os novos donos, além de um canal para reportar problemas. </td>
+      </tr>
       </tbody>
-  </table>
-
-  <h3>3.4 Ambiente do Usuário</h3>
-  <p>Os adotantes e os representantes das ONGs e protetores autônomos utilizarão dispositivos móveis como smartphones e tablets para acessar a plataforma "Deu Pet". O ambiente de trabalho dos usuários é majoritariamente móvel, permitindo que eles acessem a aplicação de qualquer lugar, o que facilita a conexão entre adotantes e ONGs. </p>
-  <ul>
-    <li><strong>Dispositivos Utilizados:</strong> Principalmente smartphones com Android (versão >= 4.4) e iOS (versão >= 10). A plataforma precisa ser responsiva e funcionar em diferentes tamanhos de tela. </li>
-    <li><strong>Conectividade:</strong> O acesso à internet é crucial para o uso da plataforma. A aplicação deve funcionar bem tanto em conexões de alta velocidade quanto em redes móveis mais lentas. </li>
-    <li><strong>Integração com Outros Aplicativos: </strong> A aplicação não depende de integração com outros aplicativos, mas deve permitir compartilhamento de informações via redes sociais e comunicação por e-mail ou aplicativos de mensagens. </li>
-    <li><strong>Ambiente Físico:</strong> Usuários podem estar em qualquer lugar, em casa, no trabalho ou em áreas públicas. Portanto, a interface deve ser intuitiva e de fácil navegação, considerando que os usuários podem acessar a plataforma em situações de mobilidade. </li>
-  </ul>
-
-  <h3>3.5 Ambiente do Usuário</h3>
-  <h4>3.5.1 Equipe de Desenvolvimento</h4>
-  <table border="1">
-    <tr>
-        <th>Representantes</th>
-        <td>Paula e Manuela</td>
-    </tr>
-    <tr>
-        <th>Descrição</th>
-        <td>Desenvolve e mantém o back-end do aplicativo, lidando com lógica de negócio, integração com bancos de dados e APIs. Desenvolve a interface do usuário, garantindo uma experiência intuitiva e responsiva.</td>
-    </tr>
-    <tr>
-        <th>Tipo</th>
-        <td>Estudantes da UFU da disciplina PDSI1</td>
-    </tr>
-    <tr>
-        <th>Responsabilidade</th>
-        <td>
-            <ul>
-                <li>Implementar a lógica de negócio.</li>
-                <li>Integrar sistemas e bancos de dados.</li>
-                <li>Desenvolver APIs robustas e seguras.</li>
-                <li>Desenvolver interfaces de usuário ricas e responsivas.</li>
-                <li>Garantir compatibilidade entre navegadores e dispositivos.</li>
-                <li>Otimizar a experiência do usuário.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <th>Critérios de Sucesso</th>
-        <td>
-            <ul>
-                <li>Interfaces responsivas e intuitivas.</li>
-                <li>Alta performance e usabilidade.</li>
-                <li>APIs eficientes e escaláveis.</li>
-                <li>Desempenho e segurança da aplicação.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <th>Envolvimento</th>
-        <td>Alto</td>
-    </tr>
-    <tr>
-        <th>Problemas/Comentários</th>
-        <td>
-            <ul>
-                <li>Compatibilidade entre dispositivos.</li>
-                <li>Desafios de performance em dispositivos móveis.</li>
-                <li>Dependência de sistemas externos.</li>
-                <li>Desafios de performance em cargas elevadas.</li>
-            </ul>
-        </td>
-    </tr>
-  </table>
-
-  <h4>3.5.2 Equipe de Gestão de Projeto </h4>
-  <table border="1">
-    <tr>
-        <th>Representantes</th>
-        <td>Professora Daniela</td>
-    </tr>
-    <tr>
-        <th>Descrição</th>
-        <td>Responsável pela coordenação geral do projeto, garantindo que os objetivos sejam atingidos dentro do prazo, escopo e orçamento.</td>
-    </tr>
-    <tr>
-        <th>Tipo</th>
-        <td>Professora da disciplina PDSI1 na UFU</td>
-    </tr>
-    <tr>
-        <th>Responsabilidade</th>
-        <td>
-            <ul>
-                <li>Definir e monitorar o cronograma do projeto.</li>
-                <li>Gerenciar recursos e orçamentos.</li>
-                <li>Facilitar a comunicação entre todas as partes interessadas.</li>
-                <li>Gerenciar riscos e mudanças.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <th>Critérios de Sucesso</th>
-        <td>
-            <ul>
-                <li>Conclusão do projeto dentro do prazo e orçamento estabelecidos.</li>
-                <li>Satisfação das partes interessadas.</li>
-                <li>Alcançar os objetivos estratégicos do projeto.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <th>Envolvimento</th>
-        <td>Alto</td>
-    </tr>
-    <tr>
-        <th>Problemas/Comentários</th>
-        <td>
-            <ul>
-                <li>Dependência de recursos críticos.</li>
-                <li>Mudanças de escopo.</li>
-            </ul>
-        </td>
-    </tr>
-  </table>
-
-  <h4>3.5.3 Scrum Master </h4>
-  <table border="1">
-    <tr>
-        <th>Representantes</th>
-        <td>Letícia</td>
-    </tr>
-    <tr>
-        <th>Descrição</th>
-        <td>Facilita a metodologia ágil no projeto, garantindo que a equipe siga as práticas de Scrum.</td>
-    </tr>
-    <tr>
-        <th>Tipo</th>
-        <td>Aluna da UFU da disciplina PDSI1</td>
-    </tr>
-    <tr>
-        <th>Responsabilidade</th>
-        <td>
-            <ul>
-                <li>Definir e monitorar o cronograma do projeto.</li>
-                <li>Gerenciar recursos e orçamentos.</li>
-                <li>Facilitar a comunicação entre todas as partes interessadas.</li>
-                <li>Gerenciar riscos e mudanças.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <th>Critérios de Sucesso</th>
-        <td>
-            <ul>
-                <li>Conclusão do projeto dentro do prazo e orçamento estabelecidos.</li>
-                <li>Satisfação das partes interessadas.</li>
-                <li>Alcançar os objetivos estratégicos do projeto.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <th>Envolvimento</th>
-        <td>Alto</td>
-    </tr>
-    <tr>
-        <th>Problemas/Comentários</th>
-        <td>
-            <ul>
-                <li>Dependência de recursos críticos.</li>
-                <li>Mudanças de escopo.</li>
-            </ul>
-        </td>
-    </tr>
-  </table>
-
-  <h4>3.5.4 Equipe de qualidade e testes de software</h4>
-  <table border="1">
-    <tr>
-        <th>Representantes</th>
-        <td>Vitória</td>
-    </tr>
-    <tr>
-        <th>Descrição</th>
-        <td>Responsável por garantir que o software desenvolvido atenda aos padrões de qualidade e funcione conforme especificado.</td>
-    </tr>
-    <tr>
-        <th>Tipo</th>
-        <td>Aluna da UFU da disciplina PDSI1</td>
-    </tr>
-    <tr>
-        <th>Responsabilidade</th>
-        <td>
-            <ul>
-                <li>Planejar e executar testes (funcionais, regressão, carga, etc.).</li>
-                <li>Garantir a cobertura de testes adequada.</li>
-                <li>Relatar defeitos e acompanhar a resolução.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <th>Critérios de Sucesso</th>
-        <td>
-            <ul>
-                <li>Conclusão do projeto dentro do prazo e orçamento estabelecidos.</li>
-                <li>Satisfação das partes interessadas.</li>
-                <li>Alcançar os objetivos estratégicos do projeto.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <th>Envolvimento</th>
-        <td>Alto</td>
-    </tr>
-    <tr>
-        <th>Problemas/Comentários</th>
-        <td>
-            <ul>
-                <li>Dependência de recursos críticos.</li>
-                <li>Mudanças de escopo.</li>
-            </ul>
-        </td>
-    </tr>
-  </table>
-
-  <h4>3.5.5 DevOps</h4>
-
-  <table border="1">
-    <tr>
-        <th>Representantes</th>
-        <td>Ana Júlia</td>
-    </tr>
-    <tr>
-        <th>Descrição</th>
-        <td>Responsável por garantir que o software desenvolvido atenda aos padrões de qualidade e funcione conforme especificado.</td>
-    </tr>
-    <tr>
-        <th>Tipo</th>
-        <td>Aluna da UFU da disciplina PDSI1</td>
-    </tr>
-    <tr>
-        <th>Responsabilidade</th>
-        <td>
-            <ul>
-                <li>Configurar pipelines de CI/CD.</li>
-                <li>Gerenciar infraestruturas como código.</li>
-                <li>Monitorar e otimizar o ambiente de produção.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <th>Critérios de Sucesso</th>
-        <td>
-            <ul>
-                <li>Deploys automatizados e sem falhas.</li>
-                <li>Alta disponibilidade e resiliência do sistema.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <th>Envolvimento</th>
-        <td>Alto</td>
-    </tr>
-    <tr>
-        <th>Problemas/Comentários</th>
-        <td>
-            <ul>
-                <li>Desafios com escalabilidade.</li>
-                <li>Dependência de serviços de terceiros.</li>
-            </ul>
-        </td>
-    </tr>
-  </table>
-
-  <h3>3.6 Perfil dos Usuários</h3>
-  <h4>3.6.1 Adotante de Pets</h4>
-  <table border="1">
-    <tr>
-        <th>Representante</th>
-        <td>Adotantes</td>
-    </tr>
-    <tr>
-        <th>Descrição</th>
-        <td>Este usuário é um indivíduo ou família interessada em adotar um animal de estimação. Pode ter pouca experiência com adoção e procura uma ferramenta simples e intuitiva para navegar no processo.</td>
-    </tr>
-    <tr>
-        <th>Tipo</th>
-        <td>Usuário Informal</td>
-    </tr>
-    <tr>
-        <th>Responsabilidade</th>
-        <td>
-            <ul>
-                <li>Buscar informações sobre pets disponíveis para adoção.</li>
-                <li>Entrar em contato com ONGs para saber mais sobre o processo de adoção.</li>
-                <li>Completar o processo de adoção seguindo as orientações fornecidas.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <th>Critérios de Sucesso</th>
-        <td>
-            <ul>
-                <li>Facilidade em encontrar um pet que se adeque ao seu perfil e necessidades.</li>
-                <li>Processo de adoção simples e sem complicações.</li>
-                <li>Sentir-se apoiado e informado durante todo o processo.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <th>Envolvimento</th>
-        <td>Alto</td>
-    </tr>
-    <tr>
-        <th>Problemas/Comentários</th>
-        <td>
-            <ul>
-                <li>Não possuir um smartphone com os pré-requisitos elencados ou não ter acesso à internet.</li>
-            </ul>
-        </td>
-    </tr>
-  </table>
-
-  <h4>3.6.2 Representantes das ONGs e Protetores Autônomos </h4>
-  <table border="1">
-    <tr>
-        <th>Representante</th>
-        <td>Representantes das ONGs</td>
-    </tr>
-    <tr>
-        <th>Descrição</th>
-        <td>Indivíduos que atuam em ONGs ou como protetores autônomos, responsáveis por cadastrar animais disponíveis para adoção.</td>
-    </tr>
-    <tr>
-        <th>Tipo</th>
-        <td>Representantes das ONGs e Protetores autônomos</td>
-    </tr>
-    <tr>
-        <th>Responsabilidade</th>
-        <td>
-            <ul>
-                <li>Manter o cadastro atualizado dos animais disponíveis na plataforma.</li>
-                <li>Facilitar a comunicação com os adotantes, respondendo perguntas e agendando encontros.</li>
-                <li>Garantir que o processo de adoção seja realizado de forma responsável e transparente.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <th>Critérios de Sucesso</th>
-        <td>
-            <ul>
-                <li>Facilidade em cadastrar e gerenciar perfis de animais.</li>
-                <li>Comunicação eficiente com os adotantes.</li>
-                <li>Alta taxa de adoções bem-sucedidas.</li>
-            </ul>
-        </td>
-    </tr>
-    <tr>
-        <th>Envolvimento</th>
-        <td>Alto, com uso diário da plataforma para gerenciar os perfis dos animais e interagir com os adotantes.</td>
-    </tr>
-    <tr>
-        <th>Problemas/Comentários</th>
-        <td>
-            <ul>
-                <li>Necessidade de ferramentas que simplifiquem a gestão dos perfis dos animais e a comunicação com os adotantes.</li>
-            </ul>
-        </td>
-    </tr>
-  </table>
-
-  <h3>3.7 Principais Necessidades dos Usuários e dos Envolvidos </h3>
-  <table border="1">
-    <thead>
-      <tr>
-          <th>Necessidade</th>
-          <th>Interesse </th>
-          <th>Solução Proposta</th>
-      </tr>
-  </thead>
-  <tbody>
-      <tr>
-          <td>Facilidade de comunicação entre adotantes e ONGs </td>
-          <td>Necessidade de uma comunicação rápida e eficaz para garantir que os adotantes possam obter informações precisas sobre os pets. </td>
-          <td>Sistema de chat dentro do aplicativo que permita troca de mensagens em tempo real, além de notificações para novos contatos. </td>
-      </tr>
-      <tr>
-          <td>Processo de adoção simplificado </td>
-          <td>Minimizar burocracia e garantir que o processo de adoção seja rápido e acessível. </td>
-          <td>Interface guiada que simplifique o processo de adoção, desde a seleção do pet até a finalização dos trâmites de adoção. </td>
-      </tr>
-      <tr>
-        <td>Acesso a informações detalhadas dos pets </td>
-        <td>Garantir que os adotantes tenham todas as informações necessárias para tomar uma decisão informada. </td>
-        <td>Perfis detalhados dos animais, incluindo histórico médico, comportamento, e características especiais. </td>
-    </tr>
-    <tr>
-      <td>Suporte pós-adoção </td>
-      <td>Manter o bem-estar dos animais após a adoção e garantir apoio contínuo aos adotantes. </td>
-      <td>Sistema de acompanhamento pós-adoção com suporte e dicas para os novos donos, além de um canal para reportar problemas. </td>
-  </tr>
-  </tbody>
-  </table>
-
-  </section>
-
-  <section>
-    <h2>4. Visão Geral do Produto </h2>
-    <h3>4.1 Perspectiva do Produto </h3>
-    <p>O sistema "DeuPet” funcionará como uma ferramenta facilitadora para a comunicação entre ONGs e protetores de animais e pessoas interessadas na adoção de cães e gatos. Os usuários da plataforma poderão dispor de funções como cadastro de animais, busca de pets disponíveis para a adoção, compartilhamento de informações entre o adotante e a pessoa responsável pelo animal (ONG/protetor) e sistema de notificação. </p>
-
-    <h3>4.2  Resumo das Capacidades  </h3>
-    <table border="1">
-      <thead>
-        <tr>
-            <th>Benefício para o cliente </th>
-            <th>Recursos </th>
-        </tr>
-    </thead>
-    <tbody>
-        <tr>
-            <td>A plataforma será clara e simples, fazendo com que o acesso seja fácil e sem complicações. </td>
-            <td>Design simples e intuitivo.  </td>
-        </tr>
-        <tr>
-            <td>A comunicação é facilitada por um compartilhamento de informações entre o responsável pelo animal e a pessoa interessada na adoção. </td>
-            <td>Campo para envio de mensagens entre o adotante e o responsável pelo animal, além de um chat onde poderão se comunicar em tempo real. </td>
-        </tr>
-        <tr>
-          <td>Equipe de suporte pós-adoção. </td>
-          <td>Funcionalidade que permite o compartilhamento de dicas, orientações e assistência para as pessoas que acabaram que adotar um animal. </td>
-      </tr>
-      <tr>
-        <td>Possibilidade de encontrar um animal de acordo com preferências pessoais. </td>
-        <td>Filtro que se baseia no perfil dos adotantes, considerando fatores como experiência prévia com pets, espaço disponível, rotina, renda e preferências específicas, como porte, temperamento e espécie desejada. </td>
-    </tr>
-    </tbody>
-    </table>
-
-    <h3>4.3 Licenciamento e Instalação </h3>
-    <p>O aplicativo estará disponível para download no Google Play Store para dispositivos Android e Apple App Store para dispositivos IOS. </p>
-  </section>
-
-  <section>
-    <h2>5. Recursos do Produto </h2>
-    <h3>5.1 Cadastro </h3>
-    <p>O aplicativo permite o cadastro com duas funções distintas: adotantes, que criam perfis para buscar e adotar animais, e os responsáveis, que registram detalhes dos pets disponíveis para adoção. </p>
-
-    <h3>5.2 Login </h3>
-    <p>A autenticação dos usuários será realizada mediante login. </p>
-
-    <h3>5.3 Cadastro de animais </h3>
-    <p>ONGs e protetores autônomos podem registrar detalhes dos animais disponíveis para adoção, incluindo informações básicas, históricos e imagens/vídeos. </p>
-
-    <h3>5.4 Conexão entre animais e adotantes </h3>
-    <p>O sistema conta com a funcionalidade “Deu Pet” para conectar adotantes com animais, sugerindo combinações com base na compatibilidade entre as preferências dos adotantes e as características dos animais. </p>
+      </table>
     
-    <h3>5.5 Comunicação </h3>
-    <p>A plataforma permite a comunicação entre os adotantes e quem informa os animais disponíveis para a adoção, facilitando a troca de mensagens e a coordenação de encontros. </p>
-
-    <h3>5.6 Filtragem e Busca </h3>
-    <p>O aplicativo oferece opções de filtragem para que os adotantes encontrem animais com base em características específicas e preferências pessoais, como porte, idade e espécie. </p>
-  </section>
-
-  <section>
-    <h2>6. Restrições </h2>
-    <h3>6.1 Restrições de Design </h3>
-    <p>O sistema precisa ser atrativo aos usuários e ao mesmo tempo de fácil uso. O layout do aplicativo deve se adaptar a diferentes tamanhos de tela, garantindo uma experiência consistente em dispositivos Android e iOS. Deve ser utilizado cores de alto contraste e fontes legíveis para facilitar a leitura, beneficiando usuários com deficiências visuais. </p>
-
-    <h3>6.2 Restrições de Implementação </h3>
-    <p>O sistema terá o front-end desenvolvido em Flutter, permitindo a criação de aplicativos nativos para IOS e Android a partir de uma única base de código. No back-end, será utilizado Java juntamente com o framework Spring Boot. Além disso, serão incorporados recursos de acessibilidade, como leitores de tela e ajustes de fonte, para garantir que o aplicativo seja utilizável por pessoa com deficiência. </p>
-
-    <h3>Restrições de Segurança</h3>
-    <p>O sistema se comunica com um banco de dados externo. O sistema deve ser resistente a ataques e possíveis tentativas de invasão. </p>
-
-    <h3>6.4 Restrições de Uso</h3>
-    <p>Para o uso do sistema é necessário que o usuário tenha acesso a um dispositivo conectado à internet. </p>
+      </section>
     
-  </section>
+      <section>
+        <h2>4. Visão Geral do Produto </h2>
+        <h3>4.1 Perspectiva do Produto </h3>
+        <p>O sistema "DeuPet” funcionará como uma ferramenta facilitadora para a comunicação entre ONGs e protetores de animais e pessoas interessadas na adoção de cães e gatos. Os usuários da plataforma poderão dispor de funções como cadastro de animais, busca de pets disponíveis para a adoção, compartilhamento de informações entre o adotante e a pessoa responsável pelo animal (ONG/protetor) e sistema de notificação. </p>
+    
+        <h3>4.2  Resumo das Capacidades  </h3>
+        <table border="1">
+          <thead>
+            <tr>
+                <th>Benefício para o cliente </th>
+                <th>Recursos </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>A plataforma será clara e simples, fazendo com que o acesso seja fácil e sem complicações. </td>
+                <td>Design simples e intuitivo.  </td>
+            </tr>
+            <tr>
+                <td>A comunicação é facilitada por um compartilhamento de informações entre o responsável pelo animal e a pessoa interessada na adoção. </td>
+                <td>Campo para envio de mensagens entre o adotante e o responsável pelo animal, além de um chat onde poderão se comunicar em tempo real. </td>
+            </tr>
+            <tr>
+              <td>Equipe de suporte pós-adoção. </td>
+              <td>Funcionalidade que permite o compartilhamento de dicas, orientações e assistência para as pessoas que acabaram que adotar um animal. </td>
+          </tr>
+          <tr>
+            <td>Possibilidade de encontrar um animal de acordo com preferências pessoais. </td>
+            <td>Filtro que se baseia no perfil dos adotantes, considerando fatores como experiência prévia com pets, espaço disponível, rotina, renda e preferências específicas, como porte, temperamento e espécie desejada. </td>
+        </tr>
+        </tbody>
+        </table>
+    
+        <h3>4.3 Licenciamento e Instalação </h3>
+        <p>O aplicativo estará disponível para download no Google Play Store para dispositivos Android e Apple App Store para dispositivos IOS. </p>
+      </section>
+    
+      <section>
+        <h2>5. Recursos do Produto </h2>
+        <h3>5.1 Cadastro </h3>
+        <p>O aplicativo permite o cadastro com duas funções distintas: adotantes, que criam perfis para buscar e adotar animais, e os responsáveis, que registram detalhes dos pets disponíveis para adoção. </p>
+    
+        <h3>5.2 Login </h3>
+        <p>A autenticação dos usuários será realizada mediante login. </p>
+    
+        <h3>5.3 Cadastro de animais </h3>
+        <p>ONGs e protetores autônomos podem registrar detalhes dos animais disponíveis para adoção, incluindo informações básicas, históricos e imagens/vídeos. </p>
+    
+        <h3>5.4 Conexão entre animais e adotantes </h3>
+        <p>O sistema conta com a funcionalidade “Deu Pet” para conectar adotantes com animais, sugerindo combinações com base na compatibilidade entre as preferências dos adotantes e as características dos animais. </p>
+        
+        <h3>5.5 Comunicação </h3>
+        <p>A plataforma permite a comunicação entre os adotantes e quem informa os animais disponíveis para a adoção, facilitando a troca de mensagens e a coordenação de encontros. </p>
+    
+        <h3>5.6 Filtragem e Busca </h3>
+        <p>O aplicativo oferece opções de filtragem para que os adotantes encontrem animais com base em características específicas e preferências pessoais, como porte, idade e espécie. </p>
+      </section>
+    
+      <section>
+        <h2>6. Restrições </h2>
+        <h3>6.1 Restrições de Design </h3>
+        <p>O sistema precisa ser atrativo aos usuários e ao mesmo tempo de fácil uso. O layout do aplicativo deve se adaptar a diferentes tamanhos de tela, garantindo uma experiência consistente em dispositivos Android e iOS. Deve ser utilizado cores de alto contraste e fontes legíveis para facilitar a leitura, beneficiando usuários com deficiências visuais. </p>
+    
+        <h3>6.2 Restrições de Implementação </h3>
+        <p>O sistema terá o front-end desenvolvido em Flutter, permitindo a criação de aplicativos nativos para IOS e Android a partir de uma única base de código. No back-end, será utilizado Java juntamente com o framework Spring Boot. Além disso, serão incorporados recursos de acessibilidade, como leitores de tela e ajustes de fonte, para garantir que o aplicativo seja utilizável por pessoa com deficiência. </p>
+    
+        <h3>Restrições de Segurança</h3>
+        <p>O sistema se comunica com um banco de dados externo. O sistema deve ser resistente a ataques e possíveis tentativas de invasão. </p>
+    
+        <h3>6.4 Restrições de Uso</h3>
+        <p>Para o uso do sistema é necessário que o usuário tenha acesso a um dispositivo conectado à internet. </p>
+        
+      </section>
+    
+      <section>
+        <h2>7. Referências Bibliográficas </h2>
+        <a href="https://www.ibm.com/docs/pt-br/engineering-lifecycle-management-suite/lifecycle-management/6.0.3?topic=requirements-vision-document ">https://www.ibm.com/docs/pt-br/engineering-lifecycle-management-suite/lifecycle-management/6.0.3?topic=requirements-vision-document </a>
+      </section>
+</div>
 
-  <section>
-    <h2>7. Referências Bibliográficas </h2>
-    <a href="https://www.ibm.com/docs/pt-br/engineering-lifecycle-management-suite/lifecycle-management/6.0.3?topic=requirements-vision-document ">https://www.ibm.com/docs/pt-br/engineering-lifecycle-management-suite/lifecycle-management/6.0.3?topic=requirements-vision-document </a>
-  </section>
-
+</div>
+<a href="#" class="scrollup"><i class="fa fa-angle-up active"></i></a>
+<!-- javascript
+    ================================================== -->
+<!-- Placed at the end of the document so the pages load faster -->
+<script src="../js/jquery.js"></script>
+<script src="../js/jquery.easing.1.3.js"></script>
+<script src="../js/bootstrap.min.js"></script>
+<script src="../js/jquery.fancybox.pack.js"></script>
+<script src="../js/jquery.fancybox-media.js"></script> 
+<script src="../js/portfolio/jquery.quicksand.js"></script>
+<script src="../js/portfolio/setting.js"></script>
+<script src="../js/jquery.flexslider.js"></script>
+<script src="../js/animate.js"></script>
+<script src="../js/custom.js"></script>
 </body>
 
 </html>
